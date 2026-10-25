@@ -311,9 +311,13 @@ details.abstract[open] summary::after{content:"\2013"}
 }
 
 /* -------------------------------------------------------------- theater */
-.masonry{columns:3;column-gap:22px}
-@media (max-width:1000px){.masonry{columns:2}}
-@media (max-width:620px){.masonry{columns:1}}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.pgrid--2{grid-template-columns:repeat(2,1fr)}
+.pgrid .span2{grid-column:span 2}
+.pgrid .tile{margin:0}
+.tnote{display:flex;align-items:center;min-width:0}
+@media (max-width:1000px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.pgrid,.pgrid--2{grid-template-columns:1fr}.pgrid .span2{grid-column:auto}}
 .tile{break-inside:avoid;margin:0 0 22px;cursor:zoom-in;position:relative}
 .tile .ph{border-radius:3px}
 .tile__cap{margin-top:12px}
