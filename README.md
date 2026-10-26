@@ -2,9 +2,9 @@
 
 个人展示网站源码。为美本申请准备的个人品牌站，面向招生官。
 
-- 线上地址：https://ricky-jin.app.workbuddy.host/
+- 线上地址：https://chrisjin2010.github.io/ricky-jin-site/
 - 技术栈：纯静态 HTML / CSS / 原生 JS，无构建步骤
-- 内容存储：云数据库（`site_text` / `site_media`），编辑后即时生效，不需要重新部署
+- 内容存储：文案与照片直接写在 HTML 源码里，随仓库一起部署
 
 ## 目录
 
@@ -18,10 +18,7 @@
 └── assets/
     ├── css/main.css    全部样式，设计变量在文件顶部
     └── js/
-        ├── app.js         导航、滚动动效、lightbox
-        ├── content.js     本地内容基线（云端数据覆盖其上）
-        ├── cloud-config.js 云端 endpoint 与 publishable key
-        └── editor.js      内联编辑系统
+        └── app.js      导航、滚动动效、lightbox
 ```
 
 ## 本地预览
@@ -31,15 +28,9 @@ python -m http.server 8000
 # 打开 http://127.0.0.1:8000
 ```
 
-本地只能看，**不能编辑**——编辑受云端域名校验，必须在正式链接上做。
+## 改内容 / 结构 / 样式
 
-## 改内容（文案、照片）
-
-打开线上链接加 `?edit=1`，邮箱验证码登录，点虚线框改字、点占位图传照片。改完即时生效。
-
-## 改结构 / 样式 / 代码
-
-改这份源码，然后由站点维护者重新发布。发布时必须复用同一个应用 ID，否则域名和登录体系会断。
+直接修改这份源码（文案和照片写在 HTML 里，照片文件放 `assets/img/`），push 到 GitHub `main` 分支后，GitHub Pages 约 1 分钟内自动部署上线。
 
 ## 设计系统
 
@@ -56,5 +47,4 @@ python -m http.server 8000
 ## 注意
 
 - 所有文案目前是英文占位，方括号 `[...]` 是留给真实内容的位置
-- 图片区是固定宽高比 + `object-fit: cover`，上传任意比例的照片都不会撑坏排版
-- 站内含云端 publishable key，这是设计上可公开的字段，不要当作密钥
+- 图片区是固定宽高比 + `object-fit: cover`，放任意比例的照片都不会撑坏排版
