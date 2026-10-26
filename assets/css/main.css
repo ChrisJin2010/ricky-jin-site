@@ -310,6 +310,32 @@ details.abstract[open] summary::after{content:"\2013"}
   padding:20px 22px;background:rgba(255,255,255,.7);border-left:2px solid var(--accent);
 }
 
+/* ------------------------------------------------------------- journey */
+.jgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:start}
+.jgrid .tile{margin:0}
+.jyear{
+  position:relative;margin-top:24px;padding-top:16px;text-align:center;
+  font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.jyear::before{
+  content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);
+  width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--line-2);
+  z-index:1;
+}
+.jyear::after{
+  content:"";position:absolute;top:0;left:-24px;right:-24px;height:1px;background:var(--line-2);
+}
+.tile:first-child .jyear::after{left:50%}
+.tile:last-child .jyear::after{right:50%}
+.tile--now .jyear{color:var(--ink);font-weight:600}
+.tile--now .jyear::before{background:var(--accent);border-color:var(--accent)}
+@media (max-width:640px){
+  .jgrid{display:flex;overflow-x:auto;gap:16px;padding-bottom:10px;scroll-snap-type:x proximity}
+  .jgrid .tile{flex:0 0 40%;max-width:40%;scroll-snap-align:start}
+  .jyear{margin-top:18px}
+  .jyear::after{left:-16px;right:-16px}
+}
+
 /* -------------------------------------------------------------- theater */
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
 .pgrid--2{grid-template-columns:repeat(2,1fr)}
