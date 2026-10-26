@@ -20,7 +20,7 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
 .bar__brand{font-family:Georgia,serif;font-size:17px;font-weight:700;white-space:nowrap}
 .bar__brand span{color:var(--accent);font-weight:400;margin-left:6px;font-size:14px}
 .bar__right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-.tokstat{font-size:12px;color:var(--muted)}
+.fstat{font-size:12px;color:var(--muted)}
 .btn{border:1px solid transparent;border-radius:999px;padding:9px 18px;font-size:14px;cursor:pointer;
   background:transparent;color:var(--ink);font-family:inherit;transition:.15s}
 .btn--primary{background:var(--accent);color:#fff}
@@ -35,10 +35,7 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
 .panel h1{font-size:24px;margin:0 0 10px}
 .panel ol{padding-left:20px}
 .panel li{margin:6px 0}
-.field{display:block;margin:18px 0 14px}
-.field span{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
-.field input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;font-size:14px}
-.field input:focus{outline:2px solid var(--accent);border-color:transparent}
+.stepsmall{font-size:12.5px;color:var(--muted)}
 .note{font-size:12.5px;color:var(--muted);background:var(--paper);border-radius:9px;padding:12px 14px}
 .err{color:var(--err);font-size:13.5px}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
@@ -88,30 +85,25 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
 <header class="bar">
   <div class="bar__brand">Ricky Jin<span>内容编辑器</span></div>
   <div class="bar__right">
-    <span class="tokstat" id="tokstat"></span>
-    <button class="btn btn--ghost" id="logoutbtn" hidden>退出登录</button>
+    <span class="fstat" id="fstat"></span>
+    <button class="btn btn--ghost" id="switchbtn" hidden>换文件夹</button>
     <button class="btn btn--save" id="savebtn" hidden>保存全部改动</button>
   </div>
 </header>
 
 <main id="loginview" class="wrap">
   <div class="panel">
-    <h1>登录编辑器</h1>
-    <p>需要一个 GitHub 令牌（token）才能保存改动。生成一次，以后一直用：</p>
+    <h1>开始使用</h1>
     <ol>
-      <li>浏览器登录 <b>ChrisJin2010</b> 这个 GitHub 账号</li>
-      <li>打开 <b>Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token</b></li>
-      <li>名字随意（如 editor）；<b>Repository access 选 Only select repositories → ricky-jin-site</b></li>
-      <li>Permissions → Repository permissions → <b>Contents 设为 Read and write</b>，其余保持默认</li>
-      <li>点 Generate token，复制生成的字符串（<code>github_pat_…</code>）粘贴到下面</li>
+      <li>用 <b>Chrome 或 Edge</b> 浏览器打开本页</li>
+      <li>点下面的按钮，选择电脑上的 <b>ricky-jin-site</b> 文件夹<br>
+        <span class="stepsmall">一般在：此电脑 → Documents（文档）→ Trae-CN → default → ricky-jin-site</span></li>
+      <li>改文字、传照片 → 点右上角「保存全部改动」，改动会<b>直接写进这个文件夹</b></li>
+      <li>打开 <b>GitHub Desktop</b> → 点 <b>Commit to main</b> → 点 <b>Push origin</b>，1–2 分钟后线上生效</li>
     </ol>
-    <label class="field">
-      <span>GitHub 令牌</span>
-      <input id="tokinput" type="password" placeholder="github_pat_…" autocomplete="off">
-    </label>
-    <button class="btn btn--primary" id="loginbtn">登录</button>
+    <button class="btn btn--primary" id="pickbtn">选择网站文件夹</button>
     <p id="loginerr" class="err" hidden></p>
-    <p class="note">令牌只保存在你本机浏览器的 localStorage；保存时通过 GitHub 官方 API 直接提交到你的仓库，不经过任何第三方服务器。不再使用时可在 GitHub 令牌页面随时撤销。</p>
+    <p class="note">不需要令牌、不用登录任何账号。编辑器只把文件保存到你电脑上的网站文件夹；上线靠 GitHub Desktop 推送（已登录的账号有推送权限）。下次打开本页会自动记住文件夹，只需点一下授权。</p>
   </div>
 </main>
 
@@ -121,7 +113,7 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
 </main>
 
 <div class="savebar" id="savebar" hidden>
-  <span class="savestat" id="savestat">改完点右上角「保存全部改动」，约 1–2 分钟后线上生效（查看时按 Ctrl+F5 强刷）</span>
+  <span class="savestat" id="savestat">改完点右上角「保存全部改动」写入本地文件夹，再用 GitHub Desktop 推送上线</span>
   <a id="viewlink" href="https://chrisjin2010.github.io/ricky-jin-site/" target="_blank">预览站点 ↗</a>
 </div>
 <div class="toast" id="toast" hidden></div>
@@ -129,15 +121,11 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
 <script>
 (function () {
   'use strict';
-  var OWNER = 'ChrisJin2010', REPO = 'ricky-jin-site', BRANCH = 'main';
-  var API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
-  var RAW = 'https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/' + BRANCH + '/';
   var PAGES = [['index', '首页'], ['theater', '戏剧'], ['athletics', '体育'], ['research', '科研'], ['service', '服务']];
-  var LS_KEY = 'rjs_editor_token';
 
   var $ = function (id) { return document.getElementById(id); };
-  var token = '';
-  var state = null, stateSha = null;     // committed content.json
+  var dirHandle = null;
+  var state = null;
   var uiText = {}, uiImg = {}, imgQueue = {};
   var htmlText = {};                      // key -> html baseline text
   var currentPage = null;
@@ -147,35 +135,78 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
     var t = $('toast'); t.textContent = msg; t.hidden = false;
     clearTimeout(t._tm); t._tm = setTimeout(function () { t.hidden = true; }, ms || 3200);
   }
-  function b64enc(str) { return btoa(unescape(encodeURIComponent(str))); }
-  function b64dec(b64) { return decodeURIComponent(escape(atob(String(b64).replace(/\s+/g, '')))); }
   function slug(k) { return k.toLowerCase().replace(/[^a-z0-9]+/g, '-'); }
-  function apiHeaders() { return { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json' }; }
 
-  function apiGet(path) {
-    return fetch(API + path, { headers: apiHeaders(), cache: 'no-store' })
-      .then(function (r) {
-        return r.json().catch(function () { return null; }).then(function (d) { return { status: r.status, data: d }; });
-      });
-  }
-  function contentsPut(path, b64, msg, sha) {
-    var body = { message: msg, content: b64, branch: BRANCH };
-    if (sha) body.sha = sha;
-    return fetch(API + '/contents/' + path, {
-      method: 'PUT', headers: apiHeaders(), body: JSON.stringify(body)
-    }).then(function (r) {
-      if (!r.ok) { var e = new Error('HTTP ' + r.status); e.code = r.status; e.path = path; throw e; }
-      return r.json();
+  /* ---------- IndexedDB: remember folder handle ---------- */
+  function idbOpen() {
+    return new Promise(function (res, rej) {
+      var rq = indexedDB.open('rjs-editor', 1);
+      rq.onupgradeneeded = function () { rq.result.createObjectStore('kv'); };
+      rq.onsuccess = function () { res(rq.result); };
+      rq.onerror = function () { rej(rq.error); };
     });
   }
-  function getSha(path) {
-    return apiGet('/contents/' + path + '?ref=' + BRANCH).then(function (res) {
-      return res.status === 200 && res.data ? res.data.sha : null;
+  function idbSet(h) {
+    return idbOpen().then(function (db) {
+      return new Promise(function (res, rej) {
+        var tx = db.transaction('kv', 'readwrite');
+        tx.objectStore('kv').put(h, 'dir');
+        tx.oncomplete = function () { res(); };
+        tx.onerror = function () { rej(tx.error); };
+      });
+    });
+  }
+  function idbGet() {
+    return idbOpen().then(function (db) {
+      return new Promise(function (res, rej) {
+        var g = db.transaction('kv', 'readonly').objectStore('kv').get('dir');
+        g.onsuccess = function () { res(g.result || null); };
+        g.onerror = function () { rej(g.error); };
+      });
+    });
+  }
+  function idbDel() {
+    return idbOpen().then(function (db) {
+      return new Promise(function (res) {
+        var tx = db.transaction('kv', 'readwrite');
+        tx.objectStore('kv').delete('dir');
+        tx.oncomplete = function () { res(); };
+        tx.onerror = function () { res(); };
+      });
+    });
+  }
+
+  /* ---------- local file helpers ---------- */
+  function resolveDir(segs, create) {
+    var p = Promise.resolve(dirHandle);
+    segs.forEach(function (s) {
+      p = p.then(function (d) { return d.getDirectoryHandle(s, create ? { create: true } : undefined); });
+    });
+    return p;
+  }
+  function readTextFile(name) {
+    return dirHandle.getFileHandle(name).then(function (fh) { return fh.getFile(); })
+      .then(function (f) { return f.text(); });
+  }
+  function readNestedFile(path) {
+    var segs = path.split('/');
+    return resolveDir(segs.slice(0, -1), false).then(function (d) {
+      return d.getFileHandle(segs[segs.length - 1]);
+    }).then(function (fh) { return fh.getFile(); });
+  }
+  function writeFile(path, blob) {
+    var segs = path.split('/');
+    return resolveDir(segs.slice(0, -1), true).then(function (d) {
+      return d.getFileHandle(segs[segs.length - 1], { create: true });
+    }).then(function (fh) {
+      return fh.createWritable().then(function (w) {
+        return w.write(blob).then(function () { return w.close(); });
+      });
     });
   }
 
   /* ---------- image compression ---------- */
-  function compressToB64(file) {
+  function compressToBlob(file) {
     return new Promise(function (resolve, reject) {
       var url = URL.createObjectURL(file);
       var img = new Image();
@@ -191,10 +222,7 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
           cv.toBlob(function (b) {
             URL.revokeObjectURL(url);
             if (!b) return reject(new Error('图片压缩失败，请换一张 JPG/PNG 试试'));
-            var fr = new FileReader();
-            fr.onload = function () { resolve(String(fr.result).split(',')[1]); };
-            fr.onerror = function () { reject(new Error('读取图片失败')); };
-            fr.readAsDataURL(b);
+            resolve(b);
           }, 'image/jpeg', 0.82);
         } catch (e) { URL.revokeObjectURL(url); reject(new Error('图片处理失败')); }
       };
@@ -206,49 +234,49 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
     });
   }
 
-  /* ---------- auth ---------- */
+  /* ---------- entry / folder pick ---------- */
   function showLogin(msg) {
     $('editview').hidden = true; $('savebar').hidden = true;
-    $('savebtn').hidden = true; $('logoutbtn').hidden = true; $('tokstat').textContent = '';
+    $('savebtn').hidden = true; $('switchbtn').hidden = true; $('fstat').textContent = '';
     $('loginview').hidden = false;
     if (msg) { $('loginerr').textContent = msg; $('loginerr').hidden = false; }
+    else $('loginerr').hidden = true;
   }
-  function doLogin() {
-    var t = $('tokinput').value.trim();
-    if (!t) return;
+  function pickFolder() {
     $('loginerr').hidden = true;
-    token = t;
-    apiGet('').then(function (res) {
-      if (res.status === 401) return showLogin('令牌无效或已过期，请重新生成。');
-      if (res.status === 404) return showLogin('该令牌访问不到 ricky-jin-site 仓库——请确认用 ChrisJin2010 账号生成，且 Repository access 勾选了 ricky-jin-site。');
-      if (res.status !== 200) return showLogin('登录失败（HTTP ' + res.status + '），稍后再试。');
-      localStorage.setItem(LS_KEY, token);
-      enterEditor();
-    }).catch(function () { showLogin('网络错误，请确认能访问 github.com 后重试。'); });
+    window.showDirectoryPicker({ id: 'rjs-site', mode: 'readwrite' }).then(function (h) {
+      // sanity check: must be the git clone (has content.json), not the old ZIP folder
+      return h.getFileHandle('content.json').then(function () {
+        dirHandle = h;
+        return idbSet(h).catch(function () {}).then(enterEditor);
+      }, function () {
+        showLogin('这个文件夹里没有 content.json——请确认选的是 GitHub Desktop 克隆的 ricky-jin-site（文档\\Trae-CN\\default\\ricky-jin-site），不是旧的 ZIP 解压文件夹。');
+      });
+    }).catch(function () { /* user cancelled the picker */ });
   }
   function enterEditor() {
     $('loginview').hidden = true;
     $('editview').hidden = false;
-    $('savebtn').hidden = false; $('logoutbtn').hidden = false; $('savebar').hidden = false;
-    $('tokstat').textContent = '已登录 ·令牌尾号 ' + token.slice(-4);
-    renderTabs(); buildContentBar();
+    $('savebtn').hidden = false; $('switchbtn').hidden = false; $('savebar').hidden = false;
+    $('fstat').textContent = '已连接本地文件夹：' + dirHandle.name;
+    renderTabs();
+    $('content').innerHTML = '<p class="savestat" style="text-align:center;color:var(--muted)">正在读取站点内容…</p>';
     loadContent().then(function () { switchPage(PAGES[0][0]); });
   }
-  function logout() {
-    localStorage.removeItem(LS_KEY);
-    token = ''; state = null; uiText = {}; uiImg = {}; imgQueue = {};
-    showLogin('已退出登录。');
+  function switchFolder() {
+    dirHandle = null; state = null; uiText = {}; uiImg = {}; imgQueue = {};
+    idbDel();
+    $('pickbtn').textContent = '选择网站文件夹';
+    showLogin('');
   }
 
   /* ---------- load committed state ---------- */
   function loadContent() {
-    return apiGet('/contents/content.json?ref=' + BRANCH).then(function (res) {
-      if (res.status === 200 && res.data) {
-        stateSha = res.data.sha;
-        state = JSON.parse(b64dec(res.data.content));
-      } else {
-        stateSha = null; state = { text: {}, img: {} };
-      }
+    return readTextFile('content.json').then(function (txt) {
+      state = JSON.parse(txt);
+    }).catch(function () {
+      state = { text: {}, img: {} };
+    }).then(function () {
       if (!state.text) state.text = {};
       if (!state.img) state.img = {};
       uiText = Object.assign({}, state.text);
@@ -269,16 +297,11 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
       tabs.appendChild(b);
     });
   }
-  function buildContentBar() {
-    var c = $('content');
-    c.innerHTML = '<p class="savestat" style="text-align:center;color:var(--muted)">正在读取站点内容…</p>';
-  }
   function switchPage(page) {
     currentPage = page;
     renderTabs();
-    apiGet('/contents/' + page + '.html?ref=' + BRANCH).then(function (res) {
-      if (res.status !== 200 || !res.data) { $('content').innerHTML = '<p class="err">页面读取失败（HTTP ' + res.status + '）</p>'; return; }
-      var doc = new DOMParser().parseFromString(b64dec(res.data.content), 'text/html');
+    readTextFile(page + '.html').then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
       var groups = [];
       doc.querySelectorAll('section').forEach(function (sec) {
         var labelEl = sec.querySelector('.kicker') || sec.querySelector('h1, h2');
@@ -296,11 +319,13 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
         });
         if (texts.length || imgs.length) groups.push({ label: label, texts: texts, imgs: imgs });
       });
-      render(groups, page);
+      render(groups);
+    }).catch(function () {
+      $('content').innerHTML = '<p class="err">读取 ' + page + '.html 失败，请确认所选文件夹完整。</p>';
     });
   }
 
-  function render(groups, page) {
+  function render(groups) {
     var c = $('content'); c.textContent = '';
     if (!groups.length) { c.innerHTML = '<p style="color:var(--muted)">此页没有可编辑的槽位。</p>'; return; }
     groups.forEach(function (g) {
@@ -331,16 +356,24 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
     function refresh() {
       view.innerHTML = ''; view.classList.remove('has');
       var q = imgQueue[slot.key];
-      var cur = uiImg[slot.key];
       if (q) {
         view.classList.add('has');
         var im = document.createElement('img'); im.src = URL.createObjectURL(q); view.appendChild(im);
-      } else if (cur) {
-        view.classList.add('has');
-        var im2 = document.createElement('img'); im2.src = RAW + cur + '?t=' + Date.now(); view.appendChild(im2);
-      } else {
-        var ph = document.createElement('div'); ph.className = 'islot__ph'; ph.textContent = '空图位'; view.appendChild(ph);
+        return;
       }
+      var cur = uiImg[slot.key];
+      if (cur) {
+        readNestedFile(cur).then(function (f) {
+          if (imgQueue[slot.key] || uiImg[slot.key] !== cur) return; // changed meanwhile
+          view.classList.add('has');
+          var im2 = document.createElement('img'); im2.src = URL.createObjectURL(f); view.appendChild(im2);
+        }).catch(function () {
+          var ph0 = document.createElement('div'); ph0.className = 'islot__ph';
+          ph0.textContent = '图片文件缺失：' + cur; view.appendChild(ph0);
+        });
+        return;
+      }
+      var ph = document.createElement('div'); ph.className = 'islot__ph'; ph.textContent = '空图位'; view.appendChild(ph);
     }
     refresh();
 
@@ -395,30 +428,21 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
     var stat = $('savestat');
     var nImg = Object.keys(imgQueue).length;
     stat.className = 'savestat';
-    stat.textContent = nImg ? '正在上传图片（0/' + nImg + '）…' : '正在保存文字…';
+    stat.textContent = nImg ? '正在处理图片（0/' + nImg + '）…' : '正在保存文字…';
 
     var chain = Promise.resolve();
     var uploaded = 0;
     Object.keys(imgQueue).forEach(function (key) {
       chain = chain.then(function () {
-        return compressToB64(imgQueue[key]).then(function (b64) {
+        return compressToBlob(imgQueue[key]).then(function (blob) {
           var path = 'assets/img/' + slug(key) + '.jpg';
-          return getSha(path).then(function (sha) {
-            var attempt = function (s) {
-              return contentsPut(path, b64, 'Editor: upload ' + slug(key) + '.jpg', s)
-                .catch(function (e) {
-                  if (e.code === 409) return getSha(path).then(function (s2) { return attempt(s2); });
-                  throw e;
-                });
-            };
-            return attempt(sha).then(function () {
-              uploaded++;
-              uiImg[key] = path;
-              stat.textContent = '正在上传图片（' + uploaded + '/' + nImg + '）…';
-            });
+          return writeFile(path, blob).then(function () {
+            uploaded++;
+            uiImg[key] = path;
+            stat.textContent = '正在处理图片（' + uploaded + '/' + nImg + '）…';
           });
         }).catch(function (e) {
-          toast('图片 ' + key + ' 上传失败：' + e.message);
+          toast('图片 ' + key + ' 保存失败：' + e.message);
         }).then(function () { delete imgQueue[key]; });
       });
     });
@@ -427,16 +451,10 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
       var needJson = JSON.stringify(uiText) !== JSON.stringify(state.text) ||
                      JSON.stringify(uiImg) !== JSON.stringify(state.img);
       if (!needJson) { finishSave(false); return; }
-      stat.textContent = '正在提交内容…';
+      stat.textContent = '正在写入 content.json…';
       var payload = { text: uiText, img: uiImg, updated: new Date().toISOString() };
-      var attempt = function (s) {
-        return contentsPut('content.json', b64enc(JSON.stringify(payload, null, 2)), 'Editor: update content.json', s)
-          .catch(function (e) {
-            if (e.code === 409) return getSha('content.json').then(function (s2) { return attempt(s2); });
-            throw e;
-          });
-      };
-      return getSha('content.json').then(attempt).then(function () { finishSave(true); })
+      return writeFile('content.json', new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }))
+        .then(function () { state = payload; finishSave(true); })
         .catch(function (e) { saveFail(e); });
     }).catch(function (e) { saveFail(e); });
   }
@@ -445,10 +463,9 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
     var stat = $('savestat');
     stat.className = 'savestat ok';
     stat.textContent = committed
-      ? '✓ 已保存提交，约 1–2 分钟后线上生效（查看时按 Ctrl+F5 强刷）'
-      : '没有需要提交的文字改动（仅图片时图片已直接提交）';
-    toast('✓ 保存成功！等 1–2 分钟后强刷线上页面查看效果。', 5000);
-    // refresh committed snapshot so dirty state resets correctly
+      ? '✓ 已写入本地文件夹。打开 GitHub Desktop → Commit to main → Push origin，1–2 分钟后线上生效'
+      : '没有需要提交的文字改动（图片已写入文件夹）';
+    toast('✓ 已保存到本地文件夹！记得用 GitHub Desktop 推送（Commit → Push）。', 6000);
     loadContent().then(function () {
       if (currentPage) switchPage(currentPage);
       updateSaveBtn();
@@ -457,28 +474,46 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
   function saveFail(e) {
     var stat = $('savestat');
     stat.className = 'savestat';
-    if (e && e.code === 401) { toast('令牌已失效，请重新登录'); logout(); return; }
-    if (e && e.code === 403) { toast('保存被拒绝（403）：请检查令牌是否给 ricky-jin-site 开了 Contents: Read and write 权限'); }
-    else { toast('保存失败：' + (e && e.message ? e.message : '网络或 GitHub 接口错误')); }
+    if (e && e.name === 'NotAllowedError') {
+      toast('文件夹访问权限失效，请重新授权');
+      $('pickbtn').textContent = '点这里重新授权访问网站文件夹';
+      showLogin('');
+      return;
+    }
+    toast('保存失败：' + (e && e.message ? e.message : '未知错误'));
     stat.textContent = '保存出错，请重试';
     updateSaveBtn();
   }
 
   /* ---------- boot ---------- */
-  $('loginbtn').onclick = doLogin;
-  $('tokinput').addEventListener('keydown', function (e) { if (e.key === 'Enter') doLogin(); });
-  $('logoutbtn').onclick = logout;
+  $('pickbtn').onclick = function () {
+    if (dirHandle) {
+      dirHandle.requestPermission({ mode: 'readwrite' }).then(function (p) {
+        if (p === 'granted') enterEditor();
+        else showLogin('没有获得文件夹写入权限，请重试。');
+      });
+    } else {
+      pickFolder();
+    }
+  };
+  $('switchbtn').onclick = switchFolder;
   $('savebtn').onclick = saveAll;
 
-  var saved = localStorage.getItem(LS_KEY);
-  if (saved) {
-    token = saved;
-    apiGet('').then(function (res) {
-      if (res.status === 200) enterEditor();
-      else { localStorage.removeItem(LS_KEY); token = ''; showLogin('上次的令牌已失效，请重新登录。'); }
-    }).catch(function () { showLogin(''); });
+  if (!window.showDirectoryPicker) {
+    $('pickbtn').disabled = true;
+    showLogin('当前浏览器不支持本地文件夹访问，请改用 Chrome 或 Edge 打开本页。');
   } else {
-    showLogin('');
+    idbGet().then(function (h) {
+      if (!h) { showLogin(''); return; }
+      dirHandle = h;
+      h.queryPermission({ mode: 'readwrite' }).then(function (p) {
+        if (p === 'granted') { enterEditor(); }
+        else {
+          $('pickbtn').textContent = '点这里重新授权访问网站文件夹';
+          showLogin('');
+        }
+      });
+    }).catch(function () { showLogin(''); });
   }
 })();
 </script>
