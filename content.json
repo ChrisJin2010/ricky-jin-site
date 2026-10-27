@@ -52,5 +52,17 @@
     "theater.t5": "assets/img/theater-t5.jpg",
     "theater.t6": "assets/img/theater-t6.jpg"
   },
-  "updated": "2026-10-27T04:06:54.430Z"
+  "updated": "2026-10-27T06:36:47.444Z",
+  "pos": {
+    "theater.j1": {
+      "x": 66.3,
+      "y": 51.8,
+      "z": 1.17
+    },
+    "theater.t3": {
+      "x": 47.9,
+      "y": 100,
+      "z": 1
+    }
+  }
 }
