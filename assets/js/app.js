@@ -105,52 +105,65 @@
     var slides = Array.prototype.slice.call(track.querySelectorAll(':scope > .carousel__slide'));
     if (slides.length < 2) return;
 
-    // clone all slides and append for seamless wrap-around
-    slides.forEach(function (s) {
-      var cl = s.cloneNode(true);
-      cl.classList.add('carousel__clone');
-      cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
-      cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
-      cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
-      track.appendChild(cl);
-    });
+    var inited = false;
+    function init() {
+      if (inited) return;
+      inited = true;
+      if (isEditMode) return; // edit mode: no clones, CSS makes strip scrollable
 
-    if (isEditMode) return;
+      // IMPORTANT: clone only AFTER overlay.js filled the real photos
+      // so the copies carry the images too (otherwise the loop half is empty).
+      slides.forEach(function (s) {
+        var cl = s.cloneNode(true);
+        cl.classList.add('carousel__clone');
+        cl.classList.remove('reveal'); // clones never enter viewport check; keep them visible
+        cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
+        cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
+        cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
+        track.appendChild(cl);
+      });
 
-    // -- RAF animation: slide at constant speed, wrap around instantly at end --
-    var speed = 110;         // pixels per second (higher = faster)
-    var pos = 0;             // current translateX value (negative = scrolled left)
-    var end = 0;             // width of the ORIGINAL (non-cloned) content = wrap point
-    var last = performance.now();
-    var paused = false;
+      // -- RAF animation: constant speed, pixel-exact seamless wrap --
+      var speed = 110;       // px per second (higher = faster)
+      var pos = 0;           // current translateX (negative = scrolled left)
+      var end = 0;           // wrap distance = first clone's offset (full set + one gap)
+      var last = performance.now();
+      var paused = false;
 
-    function measure() {
-      // sum widths of original slides (slides.length of them, plus gaps between)
-      var w = 0;
-      for (var i = 0; i < slides.length; i++) w += slides[i].offsetWidth;
-      var gap = parseInt(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '22', 10);
-      end = w + gap * (slides.length - 1);
-      pos = pos % end; // keep pos bounded
-    }
-
-    function tick(now) {
-      var dt = (now - last) / 1000;
-      last = now;
-      if (!paused && !isEditMode && !document.body.classList.contains('is-editing') && !document.body.classList.contains('rjs-editing')) {
-        pos -= speed * dt;
-        if (pos <= -end) pos += end; // instant wrap — clone area matches original area
-        track.style.transform = 'translate3d(' + pos + 'px,0,0)';
+      function measure() {
+        var first = track.children[0];
+        var firstClone = track.children[slides.length];
+        end = (first && firstClone) ? (firstClone.offsetLeft - first.offsetLeft) : 0;
+        if (end > 0) pos = -((-pos) % end);
       }
+
+      function tick(now) {
+        var dt = (now - last) / 1000;
+        last = now;
+        if (!paused && !document.body.classList.contains('is-editing') && !document.body.classList.contains('rjs-editing')) {
+          if (end <= 0) measure();
+          if (end > 0) {
+            pos -= speed * dt;
+            if (pos <= -end) pos += end; // instant wrap: clone area mirrors original area
+            track.style.transform = 'translate3d(' + pos + 'px,0,0)';
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      measure();
+      window.addEventListener('resize', measure);
       requestAnimationFrame(tick);
+
+      car.addEventListener('mouseenter', function () { paused = true; });
+      car.addEventListener('mouseleave', function () { paused = false; });
     }
 
-    measure();
-    // re-measure on resize / font load / image load (widths may change)
-    window.addEventListener('resize', measure);
-    requestAnimationFrame(tick);
-
-    car.addEventListener('mouseenter', function () { paused = true; });
-    car.addEventListener('mouseleave', function () { paused = false; });
+    // run after overlay.js finished loading content.json (it sets the flag
+    // and dispatches 'rjs:overlay'); fallback in case it never signals.
+    if (window.__rjsOverlayDone) init();
+    else document.addEventListener('rjs:overlay', init);
+    window.addEventListener('load', function () { setTimeout(init, 2500); });
   });
 
   /* ------------------------------------------------------- footer year */
