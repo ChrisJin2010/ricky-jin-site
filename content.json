@@ -66,7 +66,11 @@
     "theater.g4.p3": "Acting is to try different lives that you never get to experience.",
     "service.xishan.tag1": "Urban Aid Alliance",
     "service.xishan.tag2": "3 consecutive years",
-    "global.foot.note": "Storyteller × Modeler × Connector"
+    "global.foot.note": "Storyteller × Modeler × Connector",
+    "service.stat1.num": "[300+]",
+    "service.stat2.num": "[600+]",
+    "service.stat3.num": "[3]",
+    "service.stat4.num": "[15+]"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -94,7 +98,7 @@
     "theater.t9": "assets/img/theater-t9.jpg",
     "theater.t10": "assets/img/theater-t10.jpg"
   },
-  "updated": "2026-10-27T10:18:47.161Z",
+  "updated": "2026-10-27T10:56:02.582Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,

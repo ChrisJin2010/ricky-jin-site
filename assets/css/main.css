@@ -380,6 +380,30 @@ body.is-editing .carousel__track{animation:none !important;transform:none !impor
 body.rjs-editing .carousel__clone,
 body.is-editing .carousel__clone{display:none}
 
+/* -------------------------------------------------------------- slider */
+.slider{position:relative}
+.slider__viewport{overflow:hidden}
+.slider__track{display:flex;transition:transform .6s var(--ease)}
+.slider__track .ph{flex:0 0 100%;min-width:0;margin:0}
+.slider__prev,.slider__next{
+  position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;
+  border:0;cursor:pointer;background:rgba(245,241,235,.9);color:var(--ink);
+  font-size:1.15rem;line-height:1;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(23,32,43,.22);transition:opacity .3s var(--ease),background .3s var(--ease);
+}
+.slider__prev{left:12px}
+.slider__next{right:12px}
+.slider__prev:hover:not(:disabled),.slider__next:hover:not(:disabled){background:#fff}
+.slider__prev:disabled,.slider__next:disabled{opacity:.25;cursor:default}
+.slider__dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.slider__dot{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:var(--line-2);cursor:pointer;transition:background .3s var(--ease),width .3s var(--ease)}
+.slider__dot.is-on{width:22px;background:var(--accent)}
+/* edit mode: stack all slides so every slot is reachable, hide controls */
+body.rjs-editing .slider__track,body.is-editing .slider__track{display:block;transform:none !important;transition:none !important}
+body.rjs-editing .slider__track .ph,body.is-editing .slider__track .ph{margin:0 0 14px}
+body.rjs-editing .slider__prev,body.rjs-editing .slider__next,body.rjs-editing .slider__dots,
+body.is-editing .slider__prev,body.is-editing .slider__next,body.is-editing .slider__dots{display:none}
+
 /* --------------------------------------------------------------- video */
 .video{
   position:relative;aspect-ratio:16/9;background:#0C121C;border-radius:3px;overflow:hidden;

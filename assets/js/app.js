@@ -166,6 +166,44 @@
     window.addEventListener('load', function () { setTimeout(init, 2500); });
   });
 
+  /* ------------------------------------------------------- slider (Xishan etc.) */
+  document.querySelectorAll('.slider').forEach(function (sl) {
+    var track = sl.querySelector('.slider__track');
+    if (!track) return;
+    var slides = track.children.length;
+    if (slides < 2) return;
+    if (isEditMode) return; // edit mode: CSS stacks slides, all slots uploadable
+
+    var prev = sl.querySelector('.slider__prev');
+    var next = sl.querySelector('.slider__next');
+    var dots = Array.prototype.slice.call(sl.querySelectorAll('.slider__dot'));
+    var idx = 0;
+
+    function render() {
+      track.style.transform = 'translateX(' + (idx * -100) + '%)';
+      if (prev) prev.disabled = (idx === 0);           // not circular —
+      if (next) next.disabled = (idx === slides - 1);  // arrows stop at the ends
+      dots.forEach(function (d, i) { d.classList.toggle('is-on', i === idx); });
+    }
+
+    if (prev) prev.addEventListener('click', function () { if (idx > 0) { idx--; render(); } });
+    if (next) next.addEventListener('click', function () { if (idx < slides - 1) { idx++; render(); } });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { idx = i; render(); }); });
+
+    // touch swipe
+    var sx = null;
+    sl.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    sl.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if (dx > 40 && idx > 0) { idx--; render(); }
+      else if (dx < -40 && idx < slides - 1) { idx++; render(); }
+      sx = null;
+    });
+
+    render();
+  });
+
   /* ------------------------------------------------------- footer year */
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
