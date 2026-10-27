@@ -1,6 +1,6 @@
 {
   "text": {
-    "theater.journey.title": "On Stage Since",
+    "theater.journey.title": "On Stage Since 2018",
     "theater.g1.title": "有山社 EverTale",
     "theater.g1.note": "Six productions directed and wrote — click any photo to enlarge.",
     "theater.t1.title": "绝对信号 Absolute Signal",
@@ -36,8 +36,15 @@
     "theater.t9.title": "La Mélodie Éternelle 永恒的旋律 Eternal Melody",
     "theater.t9.role": "as Character Nie Er",
     "theater.t9.date": "September 2026, Shanghai theatre academy",
-    "theater.g4.note": "Theater is where I can truly be myself."
+    "theater.g4.note": "Theater is where I can truly be myself.",
+    "theater.journey.kicker": "The Journey",
+    "theater.journey.note": "From the first play at age 10 to the high-school stage — same kid, same instinct to perform.",
+    "theater.j1.year": "[July 2018 · Age 10]",
+    "theater.j2.year": "[january 2019 · Age 11]"
   },
-  "img": {},
-  "updated": "2026-10-27T02:53:47.235Z"
+  "img": {
+    "theater.j1": "assets/img/theater-j1.jpg",
+    "theater.j2": "assets/img/theater-j2.jpg"
+  },
+  "updated": "2026-10-27T03:55:22.964Z"
 }

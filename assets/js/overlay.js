@@ -37,6 +37,7 @@
       if (!data) return;
       var text = data.text || {};
       var img = data.img || {};
+      var pos = data.pos || {};
       document.querySelectorAll('[data-key]').forEach(function (el) {
         var k = el.getAttribute('data-key');
         if (Object.prototype.hasOwnProperty.call(text, k)) {
@@ -45,12 +46,16 @@
       });
       document.querySelectorAll('[data-img-key]').forEach(function (el) {
         var k = el.getAttribute('data-img-key');
-        if (Object.prototype.hasOwnProperty.call(img, k) && img[k]) {
-          var image = el.querySelector('img');
-          if (image) {
-            image.src = img[k];
-            el.classList.add('has-img');
-          }
+        var image = el.querySelector('img');
+        if (Object.prototype.hasOwnProperty.call(img, k) && img[k] && image) {
+          image.src = img[k];
+          el.classList.add('has-img');
+        }
+        if (image && pos[k]) {
+          var p = pos[k];
+          image.style.objectPosition = p.x + '% ' + p.y + '%';
+          image.style.transformOrigin = p.x + '% ' + p.y + '%';
+          if (p.z && p.z !== 1) image.style.transform = 'scale(' + p.z + ')';
         }
       });
       rebuildCaps(text);
