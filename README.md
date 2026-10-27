@@ -32,14 +32,15 @@ python -m http.server 8000
 # 打开 http://127.0.0.1:8000
 ```
 
-## 改内容（推荐：编辑器，不用碰代码、不用令牌）
+## 改内容（推荐：编辑模式，页面上直接点着改，不用碰代码）
 
-1. 用 Chrome/Edge 打开编辑器：双击本地 `editor.html`，或访问线上版 https://chrisjin2010.github.io/ricky-jin-site/editor.html
-2. 点「选择网站文件夹」，选中电脑上的 `ricky-jin-site` 文件夹（Documents\Trae-CN\default\ricky-jin-site）——第一次选过之后，以后打开只需点一下授权
-3. 顶部选页面 → 直接改文字框、点图位的「上传/替换」传照片（自动压缩到最长边 1600px）→ 点右上角「保存全部改动」
-4. 保存只是把改动写进本地文件夹；打开 **GitHub Desktop → Commit to main → Push origin**，约 1–2 分钟后线上生效（查看时 Ctrl+F5 强刷）
+1. 打开入口页（双击本地 `editor.html` 或访问 https://chrisjin2010.github.io/ricky-jin-site/editor.html ），点要编辑的页面按钮
+2. 也可以直接在任意页面网址后加 `?edit=1` 回车，进入编辑模式（需 Chrome/Edge）
+3. 页面上**点文字直接改、点图位上传照片**（悬停图位有「换图 / 移除」按钮）；改过即时可见，但不会丢——底部黑条点「保存改动」
+4. 第一次保存时会要求选择电脑上的 `ricky-jin-site` 文件夹（授权一次，以后自动记住）；保存把改动写进该文件夹
+5. 打开 **GitHub Desktop → Commit to main → Push origin**，约 1–2 分钟后线上生效（查看时 Ctrl+F5 强刷）
 
-原理：编辑器把文字与图片路径写进 `content.json`，照片存到 `assets/img/`；五个页面通过 `overlay.js` 在运行时读取 `content.json` 覆盖显示。**注意：一旦某字段在编辑器里改过，线上以 `content.json` 为准**，再手改 HTML 里对应的占位文字不会生效（需同时在 `content.json` 里改）。
+原理：编辑模式由 `assets/js/edit.js` 提供；保存把文字与图片路径写进 `content.json`、照片存到 `assets/img/`；五个页面通过 `overlay.js` 在运行时读取 `content.json` 覆盖显示。**注意：一旦某字段在编辑器里改过，线上以 `content.json` 为准**，再手改 HTML 里对应的占位文字不会生效（需同时在 `content.json` 里改）。
 
 ## 改结构 / 样式
 
