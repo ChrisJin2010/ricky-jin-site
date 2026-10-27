@@ -76,9 +76,11 @@
     "theater.car6": "assets/img/theater-car6.jpg",
     "theater.car7": "assets/img/theater-car7.jpg",
     "theater.car8": "assets/img/theater-car8.jpg",
-    "theater.car9": "assets/img/theater-car9.jpg"
+    "theater.car9": "assets/img/theater-car9.jpg",
+    "theater.t9": "assets/img/theater-t9.jpg",
+    "theater.t10": "assets/img/theater-t10.jpg"
   },
-  "updated": "2026-10-27T08:20:23.179Z",
+  "updated": "2026-10-27T08:21:50.191Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -156,6 +158,16 @@
       "z": 1
     },
     "theater.car9": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.t9": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.t10": {
       "x": 50,
       "y": 50,
       "z": 1
