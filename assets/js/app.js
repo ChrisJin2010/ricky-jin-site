@@ -102,22 +102,55 @@
   document.querySelectorAll('.carousel').forEach(function (car) {
     var track = car.querySelector('.carousel__track');
     if (!track) return;
-    var slides = Array.prototype.slice.call(track.querySelectorAll('.carousel__slide'));
+    var slides = Array.prototype.slice.call(track.querySelectorAll(':scope > .carousel__slide'));
     if (slides.length < 2) return;
 
-    if (!isEditMode) {
-      // clone all slides and append — CSS @keyframes slides the full width (-50%)
-      // which lands exactly on the first original slide → visually seamless
-      slides.forEach(function (s) {
-        var cl = s.cloneNode(true);
-        cl.classList.add('carousel__clone');
-        cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
-        cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
-        cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
-        track.appendChild(cl);
-      });
-      track.classList.add('is-running');
+    // clone all slides and append for seamless wrap-around
+    slides.forEach(function (s) {
+      var cl = s.cloneNode(true);
+      cl.classList.add('carousel__clone');
+      cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
+      cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
+      cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
+      track.appendChild(cl);
+    });
+
+    if (isEditMode) return;
+
+    // -- RAF animation: slide at constant speed, wrap around instantly at end --
+    var speed = 110;         // pixels per second (higher = faster)
+    var pos = 0;             // current translateX value (negative = scrolled left)
+    var end = 0;             // width of the ORIGINAL (non-cloned) content = wrap point
+    var last = performance.now();
+    var paused = false;
+
+    function measure() {
+      // sum widths of original slides (slides.length of them, plus gaps between)
+      var w = 0;
+      for (var i = 0; i < slides.length; i++) w += slides[i].offsetWidth;
+      var gap = parseInt(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '22', 10);
+      end = w + gap * (slides.length - 1);
+      pos = pos % end; // keep pos bounded
     }
+
+    function tick(now) {
+      var dt = (now - last) / 1000;
+      last = now;
+      if (!paused && !isEditMode && !document.body.classList.contains('is-editing') && !document.body.classList.contains('rjs-editing')) {
+        pos -= speed * dt;
+        if (pos <= -end) pos += end; // instant wrap — clone area matches original area
+        track.style.transform = 'translate3d(' + pos + 'px,0,0)';
+      }
+      requestAnimationFrame(tick);
+    }
+
+    measure();
+    // re-measure on resize / font load / image load (widths may change)
+    window.addEventListener('resize', measure);
+    requestAnimationFrame(tick);
+
+    car.addEventListener('mouseenter', function () { paused = true; });
+    car.addEventListener('mouseleave', function () { paused = false; });
   });
 
   /* ------------------------------------------------------- footer year */

@@ -354,15 +354,6 @@ details.abstract[open] summary::after{content:"\2013"}
 /* ------------------------------------------------------------ carousel */
 .carousel{overflow:hidden;margin-top:8px}
 .carousel__track{display:flex;gap:22px;will-change:transform}
-/* @keyframes slides the track by 50% — since JS clones all slides,
-   at 50% we're back at visually identical content to start → seamless loop */
-@keyframes rjs-carousel-slide{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-.carousel__track.is-running{animation:rjs-carousel-slide 22s linear infinite}
-.carousel:hover .carousel__track.is-running,
-.carousel:focus-within .carousel__track.is-running{animation-play-state:paused}
 .carousel__slide{flex:0 0 auto;width:clamp(280px,26vw,380px);margin:0;cursor:zoom-in}
 .carousel__slide .ph{margin:0}
 @media (max-width:640px){
@@ -376,7 +367,7 @@ body.is-editing .carousel::-webkit-scrollbar{height:6px}
 body.rjs-editing .carousel::-webkit-scrollbar-thumb,
 body.is-editing .carousel::-webkit-scrollbar-thumb{background:#B4813F;border-radius:3px}
 body.rjs-editing .carousel__track,
-body.is-editing .carousel__track{animation:none !important;transform:none !important}
+body.is-editing .carousel__track{animation:none !important;transform:none !important;transition:none !important}
 body.rjs-editing .carousel__clone,
 body.is-editing .carousel__clone{display:none}
 

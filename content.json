@@ -50,7 +50,9 @@
     "home.contact.location": "Shanghai, China",
     "theater.j3.year": "[November 2022 · Age 14]",
     "theater.j4.year": "[September 2023 · Age 15]",
-    "theater.j5.year": "[September 2026 · Now]"
+    "theater.j5.year": "[September 2026 · Now]",
+    "athletics.lede": "14 years of soccer, started as striker and finally arrived at center back. Defense is geometry and anticipation — which is, more or less, the same thing I do with data.",
+    "athletics.journey.kicker": "The Journey"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -65,9 +67,12 @@
     "theater.t8": "assets/img/theater-t8.jpg",
     "theater.j3": "assets/img/theater-j3.jpg",
     "theater.j4": "assets/img/theater-j4.jpg",
-    "theater.j5": "assets/img/theater-j5.jpg"
+    "theater.j5": "assets/img/theater-j5.jpg",
+    "theater.car3": "",
+    "theater.car1": "assets/img/theater-car1.jpg",
+    "theater.car2": "assets/img/theater-car2.jpg"
   },
-  "updated": "2026-10-27T07:28:50.059Z",
+  "updated": "2026-10-27T07:44:03.249Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -100,6 +105,16 @@
       "z": 1
     },
     "theater.j5": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.car1": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.car2": {
       "x": 50,
       "y": 50,
       "z": 1
