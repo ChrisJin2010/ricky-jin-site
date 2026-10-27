@@ -54,7 +54,16 @@
     "athletics.lede": "14 years of soccer, started as striker and finally arrived at center back. Defense is geometry and anticipation — which is, more or less, the same thing I do with data.",
     "athletics.journey.kicker": "The Journey",
     "theater.t10.role": "Explaining the script to cast members while in a wheelchair",
-    "theater.t10.date": "September 2025"
+    "theater.t10.date": "September 2025",
+    "theater.g4.s1n": "[8]",
+    "theater.g4.s2n": "[5]",
+    "theater.g4.s3n": "[15+]",
+    "theater.g4.s4n": "[20+]",
+    "theater.g3.note": "Acted in 2 shows with 600+ audiences. I researched 1920s-30s Shanghai with SJTU historians. The performance was shortlisted for French Embassy's Grand Prix France-Chine 2026",
+    "theater.lede": "Nine productions, on stage and behind it.Theater is where I can truly be myself.",
+    "theater.g4.p1": "Working an audience teaches you to read a room — fast.",
+    "theater.g4.p2": "Performance is not just about perfectly following the script, but to naturally adapt to circumstances.",
+    "theater.g4.p3": "Acting is to try different lives that you never get to experience."
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -82,7 +91,7 @@
     "theater.t9": "assets/img/theater-t9.jpg",
     "theater.t10": "assets/img/theater-t10.jpg"
   },
-  "updated": "2026-10-27T08:28:15.466Z",
+  "updated": "2026-10-27T09:01:45.238Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
