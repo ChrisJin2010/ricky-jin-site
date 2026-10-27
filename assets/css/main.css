@@ -353,14 +353,22 @@ details.abstract[open] summary::after{content:"\2013"}
 
 /* ------------------------------------------------------------ carousel */
 .carousel{overflow:hidden;margin-top:8px}
-.carousel__track{display:flex;gap:22px;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
-.carousel__slide{flex:0 0 auto;width:clamp(220px,22vw,300px);margin:0;cursor:zoom-in}
-.carousel__slide .ph{margin:0}
-.carousel__clone{pointer-events:none}
-@media (max-width:640px){
-  .carousel__slide{width:clamp(170px,50vw,220px)}
+.carousel__track{display:flex;gap:22px;will-change:transform}
+/* @keyframes slides the track by 50% — since JS clones all slides,
+   at 50% we're back at visually identical content to start → seamless loop */
+@keyframes rjs-carousel-slide{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
-/* -------- edit mode: disable transform animation, allow scroll to reach every slide -------- */
+.carousel__track.is-running{animation:rjs-carousel-slide 22s linear infinite}
+.carousel:hover .carousel__track.is-running,
+.carousel:focus-within .carousel__track.is-running{animation-play-state:paused}
+.carousel__slide{flex:0 0 auto;width:clamp(280px,26vw,380px);margin:0;cursor:zoom-in}
+.carousel__slide .ph{margin:0}
+@media (max-width:640px){
+  .carousel__slide{width:clamp(200px,60vw,260px)}
+}
+/* -------- edit mode: no animation, allow scroll to reach every slide -------- */
 body.rjs-editing .carousel,
 body.is-editing .carousel{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 body.rjs-editing .carousel::-webkit-scrollbar,
@@ -368,7 +376,7 @@ body.is-editing .carousel::-webkit-scrollbar{height:6px}
 body.rjs-editing .carousel::-webkit-scrollbar-thumb,
 body.is-editing .carousel::-webkit-scrollbar-thumb{background:#B4813F;border-radius:3px}
 body.rjs-editing .carousel__track,
-body.is-editing .carousel__track{transform:none !important;transition:none !important}
+body.is-editing .carousel__track{animation:none !important;transform:none !important}
 body.rjs-editing .carousel__clone,
 body.is-editing .carousel__clone{display:none}
 

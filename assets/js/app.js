@@ -98,62 +98,26 @@
   });
 
   /* ------------------------------------------------------- carousel */
-  var isEditMode = /[?&]edit=1/.test(location.search);
+  var isEditMode = /[?&]edit=1/.test(location.search) || document.body.classList.contains('is-editing') || document.body.classList.contains('rjs-editing');
   document.querySelectorAll('.carousel').forEach(function (car) {
-    if (isEditMode) return; // edit mode: CSS handles scroll, no JS animation
     var track = car.querySelector('.carousel__track');
     if (!track) return;
     var slides = Array.prototype.slice.call(track.querySelectorAll('.carousel__slide'));
     if (slides.length < 2) return;
 
-    // clone ALL slides and append for seamless circular loop
-    slides.forEach(function (s) {
-      var cl = s.cloneNode(true);
-      cl.classList.add('carousel__clone');
-      cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
-      cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
-      cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
-      track.appendChild(cl);
-    });
-
-    var total = slides.length;
-    var idx = 0;
-    var stepMs = 2200; // faster: ~2.2s per slide
-    var paused = false;
-    var snapTimer = null;
-
-    function setPos(animate, i) {
-      var el = track.children[i];
-      if (!el) return;
-      track.style.transition = animate ? 'transform .55s cubic-bezier(.22,.61,.36,1)' : 'none';
-      track.style.transform = 'translateX(' + (-el.offsetLeft) + 'px)';
+    if (!isEditMode) {
+      // clone all slides and append — CSS @keyframes slides the full width (-50%)
+      // which lands exactly on the first original slide → visually seamless
+      slides.forEach(function (s) {
+        var cl = s.cloneNode(true);
+        cl.classList.add('carousel__clone');
+        cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
+        cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
+        cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
+        track.appendChild(cl);
+      });
+      track.classList.add('is-running');
     }
-
-    function doStep() {
-      if (paused || document.body.classList.contains('is-editing') || document.body.classList.contains('rjs-editing')) return;
-      idx++;
-      setPos(true, idx);
-      // when we reach the first cloned slide (= original index 0 duplicated),
-      // snap back to the real first slide without animation
-      if (idx === total) {
-        snapTimer = setTimeout(function () {
-          if (paused) return;
-          idx = 0;
-          setPos(false, 0);
-          snapTimer = null;
-        }, 600);
-      }
-    }
-
-    setPos(false, 0);
-    setTimeout(doStep, 1000);
-    setInterval(doStep, stepMs);
-
-    car.addEventListener('mouseenter', function () {
-      paused = true;
-      if (snapTimer) { clearTimeout(snapTimer); snapTimer = null; }
-    });
-    car.addEventListener('mouseleave', function () { paused = false; });
   });
 
   /* ------------------------------------------------------- footer year */

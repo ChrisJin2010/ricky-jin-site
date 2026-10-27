@@ -11,7 +11,7 @@
     "theater.t2.date": "June 2024, SHSID",
     "theater.t3.title": "你好，李焕英 Hi, Mom",
     "theater.t3.role": "as Character Jia Ling",
-    "theater.t3.date": "December 2024, SHSID",
+    "theater.t3.date": "November 2024, SHSID",
     "theater.t4.title": "金大班的最后一夜 The Last Night of Jin Da Ban",
     "theater.t4.role": "as Character Qin Xiong and Narrator",
     "theater.t4.date": "June 2025, SHSID",
@@ -30,7 +30,7 @@
     "theater.t7.date": "December 2023, SHSID",
     "theater.t8.title": "徐光启与利玛窦 Xu Guangqi and Matteo Ricci",
     "theater.t8.role": "as Character Lord Jin",
-    "theater.t8.date": "December 2025, SHSID",
+    "theater.t8.date": "November 2025, SHSID",
     "theater.g3.kicker": "Troupe",
     "theater.g3.title": "Shanghai Theatre Academy × SJTU Cross-Cultural Drama Troupe",
     "theater.t9.title": "La Mélodie Éternelle 永恒的旋律 Eternal Melody",
@@ -47,7 +47,10 @@
     "home.contact.text": "If you'd like a fuller research portfolio, a full video of performance, or just to have a chill chat with me, my inbox is open.",
     "home.contact.email": "rickyjin2008@163.com",
     "home.contact.phone": "+86 13120956427",
-    "home.contact.location": "Shanghai, China"
+    "home.contact.location": "Shanghai, China",
+    "theater.j3.year": "[November 2022 · Age 14]",
+    "theater.j4.year": "[September 2023 · Age 15]",
+    "theater.j5.year": "[September 2026 · Now]"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -59,9 +62,12 @@
     "theater.t5": "assets/img/theater-t5.jpg",
     "theater.t6": "assets/img/theater-t6.jpg",
     "theater.t7": "assets/img/theater-t7.jpg",
-    "theater.t8": "assets/img/theater-t8.jpg"
+    "theater.t8": "assets/img/theater-t8.jpg",
+    "theater.j3": "assets/img/theater-j3.jpg",
+    "theater.j4": "assets/img/theater-j4.jpg",
+    "theater.j5": "assets/img/theater-j5.jpg"
   },
-  "updated": "2026-10-27T07:07:27.417Z",
+  "updated": "2026-10-27T07:28:50.059Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -79,6 +85,21 @@
       "z": 1
     },
     "theater.t8": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.j3": {
+      "x": 49.5,
+      "y": 64.6,
+      "z": 1.35
+    },
+    "theater.j4": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.j5": {
       "x": 50,
       "y": 50,
       "z": 1
