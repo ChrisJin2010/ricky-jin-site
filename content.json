@@ -70,7 +70,11 @@
     "service.stat1.num": "[300+]",
     "service.stat2.num": "[600+]",
     "service.stat3.num": "[3]",
-    "service.stat4.num": "[15+]"
+    "service.stat4.num": "[15+]",
+    "service.xishan.cap": "Xishan, Yunnan, China — June 2024, 2025, and 2026",
+    "service.other1.title": "Urban Aid Alliance Online",
+    "service.hospital.meta": "Jiahui International Hospital",
+    "service.hospital.text": "Since 2024 summer, I started to actively volunteer in Jiahui International Hospital. Every month, I participate in different fields of work for 3 hours, including lobby guidance, vaccine support, companionship for children."
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -96,9 +100,16 @@
     "theater.car8": "assets/img/theater-car8.jpg",
     "theater.car9": "assets/img/theater-car9.jpg",
     "theater.t9": "assets/img/theater-t9.jpg",
-    "theater.t10": "assets/img/theater-t10.jpg"
+    "theater.t10": "assets/img/theater-t10.jpg",
+    "service.xishan.main": "assets/img/service-xishan-main.jpg",
+    "service.xishan.p2": "assets/img/service-xishan-p2.jpg",
+    "service.xishan.p3": "assets/img/service-xishan-p3.jpg",
+    "service.xishan.p4": "assets/img/service-xishan-p4.jpg",
+    "service.xishan.p5": "assets/img/service-xishan-p5.jpg",
+    "service.hospital": "assets/img/service-hospital.jpg",
+    "service.other1": "assets/img/service-other1.jpg"
   },
-  "updated": "2026-10-27T10:56:02.582Z",
+  "updated": "2026-10-27T12:13:19.270Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -186,6 +197,41 @@
       "z": 1
     },
     "theater.t10": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.xishan.main": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.xishan.p2": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.xishan.p3": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.xishan.p4": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.xishan.p5": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.hospital": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.other1": {
       "x": 50,
       "y": 50,
       "z": 1
