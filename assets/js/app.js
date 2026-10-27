@@ -98,49 +98,55 @@
   });
 
   /* ------------------------------------------------------- carousel */
+  var isEditMode = /[?&]edit=1/.test(location.search);
   document.querySelectorAll('.carousel').forEach(function (car) {
+    if (isEditMode) return; // edit mode: CSS handles scroll, no JS animation
     var track = car.querySelector('.carousel__track');
     if (!track) return;
     var slides = Array.prototype.slice.call(track.querySelectorAll('.carousel__slide'));
     if (slides.length < 2) return;
 
-    var cloneCount = Math.min(slides.length, 4); // clone first few for seamless loop
-    for (var ci = 0; ci < cloneCount; ci++) {
-      var cl = slides[ci].cloneNode(true);
+    // clone ALL slides and append for seamless circular loop
+    slides.forEach(function (s) {
+      var cl = s.cloneNode(true);
       cl.classList.add('carousel__clone');
-      // remove data-img-key so edit.js/overlay.js ignore clones (overlay already ran)
       cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
       cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
       cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
       track.appendChild(cl);
+    });
+
+    var total = slides.length;
+    var idx = 0;
+    var stepMs = 2200; // faster: ~2.2s per slide
+    var paused = false;
+    var snapTimer = null;
+
+    function setPos(animate, i) {
+      var el = track.children[i];
+      if (!el) return;
+      track.style.transition = animate ? 'transform .55s cubic-bezier(.22,.61,.36,1)' : 'none';
+      track.style.transform = 'translateX(' + (-el.offsetLeft) + 'px)';
     }
 
-    var idx = 0;
-    var stepMs = 3800;
-    var paused = false;
-    var ed = /[?&]edit=1/.test(location.search);
-
-    var snapTimer = null;
     function doStep() {
-      if (ed || paused || document.body.classList.contains('is-editing') || document.body.classList.contains('rjs-editing')) return;
+      if (paused || document.body.classList.contains('is-editing') || document.body.classList.contains('rjs-editing')) return;
       idx++;
-      var el = track.children[idx];
-      if (!el) { idx = 1; el = track.children[idx]; }
-      var target = el.offsetLeft;
-      track.style.transition = 'transform .75s cubic-bezier(.22,.61,.36,1)';
-      track.style.transform = 'translateX(' + (-target) + 'px)';
-      if (idx >= slides.length) {
+      setPos(true, idx);
+      // when we reach the first cloned slide (= original index 0 duplicated),
+      // snap back to the real first slide without animation
+      if (idx === total) {
         snapTimer = setTimeout(function () {
-          if (paused) return; // don't snap back while user is hovering
-          track.style.transition = 'none';
+          if (paused) return;
           idx = 0;
-          track.style.transform = 'translateX(0)';
+          setPos(false, 0);
           snapTimer = null;
-        }, 800);
+        }, 600);
       }
     }
 
-    setTimeout(doStep, 1200);
+    setPos(false, 0);
+    setTimeout(doStep, 1000);
     setInterval(doStep, stepMs);
 
     car.addEventListener('mouseenter', function () {

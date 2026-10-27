@@ -40,7 +40,14 @@
     "theater.journey.kicker": "The Journey",
     "theater.journey.note": "From the first play at age 10 to the high-school stage — same kid, same instinct to perform.",
     "theater.j1.year": "[July 2018 · Age 10]",
-    "theater.j2.year": "[January 2019 · Age 11]"
+    "theater.j2.year": "[January 2019 · Age 11]",
+    "home.hero.eyebrow": "Shanghai, China · Class of 2027",
+    "home.about.p1": "Hello — I'm Ricky Jin(金睿杰), a senior at Shanghai High School International Division(SHSID). My week usually splits three ways: chasing a research question, rehearsing a scene, and running sprints on a pitch that has seen better weather.",
+    "home.portrait.cap": "Ricky Jin — Shanghai, [Year]",
+    "home.contact.text": "If you'd like a fuller research portfolio, a full video of performance, or just to have a chill chat with me, my inbox is open.",
+    "home.contact.email": "rickyjin2008@163.com",
+    "home.contact.phone": "+86 13120956427",
+    "home.contact.location": "Shanghai, China"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -54,7 +61,7 @@
     "theater.t7": "assets/img/theater-t7.jpg",
     "theater.t8": "assets/img/theater-t8.jpg"
   },
-  "updated": "2026-10-27T06:40:20.318Z",
+  "updated": "2026-10-27T07:07:27.417Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,

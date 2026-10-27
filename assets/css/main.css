@@ -313,12 +313,9 @@ details.abstract[open] summary::after{content:"\2013"}
 /* ------------------------------------------------------------- journey */
 .jgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:start}
 .jgrid .tile{margin:0}
-.jpair{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.jpair .ph{border-radius:3px}
 @media (max-width:640px){
   .jgrid{display:flex;overflow-x:auto;gap:16px;padding-bottom:10px;scroll-snap-type:x proximity}
-  .jgrid .tile{flex:0 0 44%;max-width:44%;scroll-snap-align:start}
-  .jpair{gap:4px}
+  .jgrid .tile{flex:0 0 40%;max-width:40%;scroll-snap-align:start}
   .jyear{margin-top:18px}
   .jyear::after{left:-16px;right:-16px}
 }
@@ -356,13 +353,22 @@ details.abstract[open] summary::after{content:"\2013"}
 
 /* ------------------------------------------------------------ carousel */
 .carousel{overflow:hidden;margin-top:8px}
-.carousel__track{display:flex;gap:22px;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.carousel__track{display:flex;gap:22px;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
 .carousel__slide{flex:0 0 auto;width:clamp(220px,22vw,300px);margin:0;cursor:zoom-in}
 .carousel__slide .ph{margin:0}
 .carousel__clone{pointer-events:none}
 @media (max-width:640px){
   .carousel__slide{width:clamp(170px,50vw,220px)}
 }
+/* -------- edit mode: disable transform animation, allow scroll to reach every slide -------- */
+body.rjs-editing .carousel,
+body.is-editing .carousel{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+body.rjs-editing .carousel::-webkit-scrollbar,
+body.is-editing .carousel::-webkit-scrollbar{height:6px}
+body.rjs-editing .carousel::-webkit-scrollbar-thumb,
+body.is-editing .carousel::-webkit-scrollbar-thumb{background:#B4813F;border-radius:3px}
+body.rjs-editing .carousel__track,
+body.is-editing .carousel__track{transform:none !important;transition:none !important}
 body.rjs-editing .carousel__clone,
 body.is-editing .carousel__clone{display:none}
 
