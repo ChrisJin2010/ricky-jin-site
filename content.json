@@ -24,8 +24,20 @@
     "theater.g1.kicker": "Chinese drama club",
     "test.saved.by.editor": "这是一个测试——如果你在 Desktop 里看到这行，就说明通了！",
     "theater.g2.note": "The combination of the beauty of Math and Drama",
-    "theater.g2.title": "数学戏剧 Math Drama"
+    "theater.g2.title": "数学戏剧 Math Drama",
+    "theater.t7.title": "开普勒先生如是说 Thus Spoke Mr. Kepler",
+    "theater.t7.role": "as Character Fei",
+    "theater.t7.date": "December 2023, SHSID",
+    "theater.t8.title": "徐光启与利玛窦 Xu Guangqi and Matteo Ricci",
+    "theater.t8.role": "as Character Lord Jin",
+    "theater.t8.date": "December 2025, SHSID",
+    "theater.g3.kicker": "Troupe",
+    "theater.g3.title": "Shanghai Theatre Academy × SJTU Cross-Cultural Drama Troupe",
+    "theater.t9.title": "La Mélodie Éternelle 永恒的旋律 Eternal Melody",
+    "theater.t9.role": "as Character Nie Er",
+    "theater.t9.date": "September 2026, Shanghai theatre academy",
+    "theater.g4.note": "Theater is where I can truly be myself."
   },
   "img": {},
-  "updated": "2026-10-27T02:37:37.956Z"
+  "updated": "2026-10-27T02:53:47.235Z"
 }
