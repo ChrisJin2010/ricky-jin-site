@@ -1,31 +1,31 @@
-﻿{
-    "text":  {
-                 "theater.journey.title":  "On Stage Since",
-                 "theater.g1.title":  "有山社 EverTale",
-                 "theater.g1.note":  "Six productions directed and wrote — click any photo to enlarge.",
-                 "theater.t1.title":  "绝对信号 Absolute Signal",
-                 "theater.t1.role":  "as Character Xiaohao",
-                 "theater.t1.date":  "December 2023, SHSID",
-                 "theater.t2.title":  "我是“狼” I Am a Wolf",
-                 "theater.t2.role":  "as Character Shan Liren and Lin Cong",
-                 "theater.t2.date":  "June 2024, SHSID",
-                 "theater.t3.title":  "你好，李焕英 Hi, Mom",
-                 "theater.t3.role":  "as Character Jia Ling",
-                 "theater.t3.date":  "December 2024, SHSID",
-                 "theater.t4.title":  "金大班的最后一夜 The Last Night of Jin Da Ban",
-                 "theater.t4.role":  "as Character Qin Xiong and Narrator",
-                 "theater.t4.date":  "June 2025, SHSID",
-                 "theater.t5.title":  "夏洛不烦恼 Goodbye Mr. Loser",
-                 "theater.t5.role":  "as Character Xia Luo",
-                 "theater.t5.date":  "december 2025, SHSID",
-                 "theater.t6.title":  "红楼梦—海棠诗社 Dream of the Red Chamber: The Begonia Poetry Club",
-                 "theater.t6.role":  "as Sole Director",
-                 "theater.t6.date":  "June 2026, SHSID",
-                 "theater.g1.kicker":  "Chinese drama club",
-                 "test.saved.by.editor":  "这是一个测试——如果你在 Desktop 里看到这行，就说明通了！"
-             },
-    "img":  {
-
-            },
-    "updated":  "2026-10-27T10:30:01.4607738+08:00"
+{
+  "text": {
+    "theater.journey.title": "On Stage Since",
+    "theater.g1.title": "有山社 EverTale",
+    "theater.g1.note": "Six productions directed and wrote — click any photo to enlarge.",
+    "theater.t1.title": "绝对信号 Absolute Signal",
+    "theater.t1.role": "as Character Xiaohao",
+    "theater.t1.date": "December 2023, SHSID",
+    "theater.t2.title": "我是“狼” I Am a Wolf",
+    "theater.t2.role": "as Character Shan Liren and Lin Cong",
+    "theater.t2.date": "June 2024, SHSID",
+    "theater.t3.title": "你好，李焕英 Hi, Mom",
+    "theater.t3.role": "as Character Jia Ling",
+    "theater.t3.date": "December 2024, SHSID",
+    "theater.t4.title": "金大班的最后一夜 The Last Night of Jin Da Ban",
+    "theater.t4.role": "as Character Qin Xiong and Narrator",
+    "theater.t4.date": "June 2025, SHSID",
+    "theater.t5.title": "夏洛不烦恼 Goodbye Mr. Loser",
+    "theater.t5.role": "as Character Xia Luo",
+    "theater.t5.date": "december 2025, SHSID",
+    "theater.t6.title": "红楼梦—海棠诗社 Dream of the Red Chamber: The Begonia Poetry Club",
+    "theater.t6.role": "as Sole Director",
+    "theater.t6.date": "June 2026, SHSID",
+    "theater.g1.kicker": "Chinese drama club",
+    "test.saved.by.editor": "这是一个测试——如果你在 Desktop 里看到这行，就说明通了！",
+    "theater.g2.note": "The combination of the beauty of Math and Drama",
+    "theater.g2.title": "数学戏剧 Math Drama"
+  },
+  "img": {},
+  "updated": "2026-10-27T02:37:37.956Z"
 }
