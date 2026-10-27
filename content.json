@@ -17,7 +17,7 @@
     "theater.t4.date": "June 2025, SHSID",
     "theater.t5.title": "夏洛不烦恼 Goodbye Mr. Loser",
     "theater.t5.role": "as Character Xia Luo",
-    "theater.t5.date": "december 2025, SHSID",
+    "theater.t5.date": "December 2025, SHSID",
     "theater.t6.title": "红楼梦—海棠诗社 Dream of the Red Chamber: The Begonia Poetry Club",
     "theater.t6.role": "as Sole Director",
     "theater.t6.date": "June 2026, SHSID",
@@ -40,7 +40,7 @@
     "theater.journey.kicker": "The Journey",
     "theater.journey.note": "From the first play at age 10 to the high-school stage — same kid, same instinct to perform.",
     "theater.j1.year": "[July 2018 · Age 10]",
-    "theater.j2.year": "[january 2019 · Age 11]"
+    "theater.j2.year": "[January 2019 · Age 11]"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -50,9 +50,11 @@
     "theater.t3": "assets/img/theater-t3.jpg",
     "theater.t4": "assets/img/theater-t4.jpg",
     "theater.t5": "assets/img/theater-t5.jpg",
-    "theater.t6": "assets/img/theater-t6.jpg"
+    "theater.t6": "assets/img/theater-t6.jpg",
+    "theater.t7": "assets/img/theater-t7.jpg",
+    "theater.t8": "assets/img/theater-t8.jpg"
   },
-  "updated": "2026-10-27T06:36:47.444Z",
+  "updated": "2026-10-27T06:40:20.318Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -62,6 +64,16 @@
     "theater.t3": {
       "x": 47.9,
       "y": 100,
+      "z": 1
+    },
+    "theater.t7": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.t8": {
+      "x": 50,
+      "y": 50,
       "z": 1
     }
   }

@@ -97,6 +97,59 @@
     document.body.style.overflow = 'hidden';
   });
 
+  /* ------------------------------------------------------- carousel */
+  document.querySelectorAll('.carousel').forEach(function (car) {
+    var track = car.querySelector('.carousel__track');
+    if (!track) return;
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.carousel__slide'));
+    if (slides.length < 2) return;
+
+    var cloneCount = Math.min(slides.length, 4); // clone first few for seamless loop
+    for (var ci = 0; ci < cloneCount; ci++) {
+      var cl = slides[ci].cloneNode(true);
+      cl.classList.add('carousel__clone');
+      // remove data-img-key so edit.js/overlay.js ignore clones (overlay already ran)
+      cl.querySelectorAll('[data-img-key]').forEach(function (el) { el.removeAttribute('data-img-key'); });
+      cl.querySelectorAll('[data-lightbox]').forEach(function (el) { el.removeAttribute('data-lightbox'); });
+      cl.querySelectorAll('[data-cap]').forEach(function (el) { el.removeAttribute('data-cap'); });
+      track.appendChild(cl);
+    }
+
+    var idx = 0;
+    var stepMs = 3800;
+    var paused = false;
+    var ed = /[?&]edit=1/.test(location.search);
+
+    var snapTimer = null;
+    function doStep() {
+      if (ed || paused || document.body.classList.contains('is-editing') || document.body.classList.contains('rjs-editing')) return;
+      idx++;
+      var el = track.children[idx];
+      if (!el) { idx = 1; el = track.children[idx]; }
+      var target = el.offsetLeft;
+      track.style.transition = 'transform .75s cubic-bezier(.22,.61,.36,1)';
+      track.style.transform = 'translateX(' + (-target) + 'px)';
+      if (idx >= slides.length) {
+        snapTimer = setTimeout(function () {
+          if (paused) return; // don't snap back while user is hovering
+          track.style.transition = 'none';
+          idx = 0;
+          track.style.transform = 'translateX(0)';
+          snapTimer = null;
+        }, 800);
+      }
+    }
+
+    setTimeout(doStep, 1200);
+    setInterval(doStep, stepMs);
+
+    car.addEventListener('mouseenter', function () {
+      paused = true;
+      if (snapTimer) { clearTimeout(snapTimer); snapTimer = null; }
+    });
+    car.addEventListener('mouseleave', function () { paused = false; });
+  });
+
   /* ------------------------------------------------------- footer year */
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();

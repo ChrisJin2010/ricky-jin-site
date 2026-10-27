@@ -313,6 +313,15 @@ details.abstract[open] summary::after{content:"\2013"}
 /* ------------------------------------------------------------- journey */
 .jgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:start}
 .jgrid .tile{margin:0}
+.jpair{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.jpair .ph{border-radius:3px}
+@media (max-width:640px){
+  .jgrid{display:flex;overflow-x:auto;gap:16px;padding-bottom:10px;scroll-snap-type:x proximity}
+  .jgrid .tile{flex:0 0 44%;max-width:44%;scroll-snap-align:start}
+  .jpair{gap:4px}
+  .jyear{margin-top:18px}
+  .jyear::after{left:-16px;right:-16px}
+}
 .jyear{
   position:relative;margin-top:24px;padding-top:16px;text-align:center;
   font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
@@ -329,12 +338,6 @@ details.abstract[open] summary::after{content:"\2013"}
 .tile:last-child .jyear::after{right:50%}
 .tile--now .jyear{color:var(--ink);font-weight:600}
 .tile--now .jyear::before{background:var(--accent);border-color:var(--accent)}
-@media (max-width:640px){
-  .jgrid{display:flex;overflow-x:auto;gap:16px;padding-bottom:10px;scroll-snap-type:x proximity}
-  .jgrid .tile{flex:0 0 40%;max-width:40%;scroll-snap-align:start}
-  .jyear{margin-top:18px}
-  .jyear::after{left:-16px;right:-16px}
-}
 
 /* -------------------------------------------------------------- theater */
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
@@ -350,6 +353,18 @@ details.abstract[open] summary::after{content:"\2013"}
 .tile__cap b{font-family:var(--serif);font-weight:600;font-size:1.02rem;display:block;letter-spacing:0}
 .tile__cap em{font-style:normal;color:var(--muted);font-size:.84rem;display:block;margin-top:4px}
 .tile__cap time{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);display:block;margin-top:6px}
+
+/* ------------------------------------------------------------ carousel */
+.carousel{overflow:hidden;margin-top:8px}
+.carousel__track{display:flex;gap:22px;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.carousel__slide{flex:0 0 auto;width:clamp(220px,22vw,300px);margin:0;cursor:zoom-in}
+.carousel__slide .ph{margin:0}
+.carousel__clone{pointer-events:none}
+@media (max-width:640px){
+  .carousel__slide{width:clamp(170px,50vw,220px)}
+}
+body.rjs-editing .carousel__clone,
+body.is-editing .carousel__clone{display:none}
 
 /* --------------------------------------------------------------- video */
 .video{
