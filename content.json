@@ -86,7 +86,12 @@
     "service.other2.text": "2026 winter, I founded an special interschool performance for 20 visually impaired audience members. We adapted scripts, staging, and choreography for the people.",
     "service.other1.meta": "Urban Aid Alliance",
     "service.other2.meta": "EverTale • January 2026",
-    "service.close.title": "The belief underneath all of it"
+    "service.close.title": "The belief underneath all of it",
+    "research.p1.field": "Computer Vision · Calligraphy analytics",
+    "research.p1.status": "Presented on ACM UbiComp/ISWC '26 Companion",
+    "research.p1.title": "Hybrid CNN Features and a Zero-Label Composition Score",
+    "research.p1.abstract": "Traditional calligraphy learning relies heavily on costly mentor feedback, and existing automated systems typically evaluate only individual characters, ignoring overall page layout (zhangfa). To address this gap, we propose an end-to-end scoring pipeline that runs in real-time on standard laptops. Our approach combines a ResNet-18 model with handcrafted features for character-level assessment (achieving a MAE of 0.35) and a novel zero-label, unsupervised model for composition scoring based on geometric metrics. The final score integrates both dimensions via a weighted formula. Validated through synthetic perturbation tests, this lightweight system provides comprehensive, dual-dimension feedback for self-directed learners without professional instructors. Notably, we also report the failure of test-time augmentation due to direction-sensitive features.",
+    "research.p1.abstract.label": "Abstract(SUmmarized)"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -122,7 +127,7 @@
     "service.other1": "assets/img/service-other1.jpg",
     "service.other2": "assets/img/service-other2.jpg"
   },
-  "updated": "2026-10-29T10:07:03.254Z",
+  "updated": "2026-10-29T10:16:09.753Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
