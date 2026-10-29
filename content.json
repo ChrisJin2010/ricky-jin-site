@@ -79,7 +79,8 @@
     "service.xishan.quote": "\"There's a bigger world out there, and I want to see it for myself.\" - Luo",
     "service.xishan.p1": "In the summer of 2024, I arrived in Xishan Township, Eryuan, in the mountains of Yunnan — and the reality of rural education hit me hard. Thirty-two students shared a dormitory smaller than 40 square meters; the entire school owned three aging projectors; 80% of the students had never once left their county.",
     "service.xishan.p3": "One eight-day trip has grown into a multi-school alliance spanning Shanghai and Nanjing, bringing together volunteers from international and local schools. The curriculum now runs from English, history, and sports to math, chess, and paper quilling, and our fundraising campaigns have delivered over $10,000 in funds and supplies.",
-    "service.xishan.title": "Beyond Mountains: A Three-Year Journey with Xi Shan Students"
+    "service.xishan.title": "Beyond Mountains: A Three-Year Journey with Xi Shan Students",
+    "service.lede": "Every summer since 2024, I have gone back to the same mountain classroom. Service, for me, has never been a line on a list — it is the place my passion and my teaching actually meet."
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -114,7 +115,7 @@
     "service.hospital": "assets/img/service-hospital.jpg",
     "service.other1": "assets/img/service-other1.jpg"
   },
-  "updated": "2026-10-29T09:47:17.108Z",
+  "updated": "2026-10-29T09:51:00.541Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,

@@ -48,12 +48,12 @@ ul{margin:0;padding:0;list-style:none}
 /* ---------------------------------------------------------------- layout */
 .wrap{width:min(var(--wrap),100% - 56px);margin-inline:auto}
 @media (max-width:720px){.wrap{width:calc(100% - 40px)}}
-.section{padding:104px 0}
-.section--tight{padding:72px 0}
+.section{padding:84px 0}
+.section--tight{padding:60px 0}
 .section--ink{background:var(--ink);color:var(--paper)}
 @media (max-width:820px){
-  .section{padding:72px 0}
-  .section--tight{padding:52px 0}
+  .section{padding:60px 0}
+  .section--tight{padding:44px 0}
 }
 
 .sec-head{margin-bottom:52px;max-width:760px}
