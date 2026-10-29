@@ -77,8 +77,8 @@
     "service.hospital.text": "Since 2024 summer, I started to actively volunteer in Jiahui International Hospital. Every month, I participate in different fields of work for 3 hours, including lobby guidance, vaccine support, companionship for children.",
     "service.xishan.p2": "I taught English through alphabet-guessing games, taught basic soccer skills, and directed the students' first-ever play, The Little Girl Who Sold Charcoal. Watching shy observers become confident performers taught me more than any lesson I had planned. In the forests, the students became teachers, showing me how to identify the wild mushrooms that grew there.",
     "service.xishan.quote": "\"There's a bigger world out there, and I want to see it for myself.\" - Luo",
-    "service.xishan.p1": "In the summer of 2024, I arrived in Xishan Township, Eryuan, in the mountains of Yunnan — and the reality of rural education hit me hard. Thirty-two students shared a dormitory smaller than 40 square meters; the entire school owned three aging projectors; 80% of the students had never once left their county. That eight-day trip with the UAA became the start of something I have not put down since.",
-    "service.xishan.p3": "One eight-day trip has since grown into a three-year, multi-school alliance spanning Shanghai and Nanjing, bringing together volunteers from international and local schools. The curriculum now runs from English, history, and sports to math, chess, and paper quilling, and our fundraising campaigns have delivered over $10,000 in funds and supplies. Mountains separate us from Xishan; they do not separate us from each other.",
+    "service.xishan.p1": "In the summer of 2024, I arrived in Xishan Township, Eryuan, in the mountains of Yunnan — and the reality of rural education hit me hard. Thirty-two students shared a dormitory smaller than 40 square meters; the entire school owned three aging projectors; 80% of the students had never once left their county.",
+    "service.xishan.p3": "One eight-day trip has grown into a multi-school alliance spanning Shanghai and Nanjing, bringing together volunteers from international and local schools. The curriculum now runs from English, history, and sports to math, chess, and paper quilling, and our fundraising campaigns have delivered over $10,000 in funds and supplies.",
     "service.xishan.title": "Beyond Mountains: A Three-Year Journey with Xi Shan Students"
   },
   "img": {
@@ -114,7 +114,7 @@
     "service.hospital": "assets/img/service-hospital.jpg",
     "service.other1": "assets/img/service-other1.jpg"
   },
-  "updated": "2026-10-29T09:40:24.156Z",
+  "updated": "2026-10-29T09:47:17.108Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,

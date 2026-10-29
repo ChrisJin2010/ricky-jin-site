@@ -438,7 +438,7 @@ body.is-editing .slider__prev,body.is-editing .slider__next,body.is-editing .sli
   font-family:var(--serif);font-size:1.16rem;line-height:1.5;color:var(--ink);
   background:rgba(255,255,255,.62);
 }
-.feature__media .pull{margin:16px 0 10px;font-size:1.05rem}
+.feature__media .pull{margin:16px 0 10px;font-size:1.32rem;line-height:1.45}
 .subcards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media (max-width:900px){.subcards{grid-template-columns:1fr}}
 .subcard{background:var(--paper-2);border:1px solid var(--line);border-radius:3px;padding:30px 28px}
