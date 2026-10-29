@@ -74,13 +74,19 @@
     "service.xishan.cap": "Xishan, Yunnan, China — June 2024, 2025, and 2026",
     "service.other1.title": "Urban Aid Alliance Online",
     "service.hospital.meta": "Jiahui International Hospital",
-    "service.hospital.text": "Since 2024 summer, I started to actively volunteer in Jiahui International Hospital. Every month, I participate in different fields of work for 3 hours, including lobby guidance, vaccine support, companionship for children.",
+    "service.hospital.text": "Since summer 2024, I started to actively volunteer in Jiahui International Hospital. Every month, I participate in different fields of work for 3 hours, including lobby guidance, vaccine support, companionship for children.",
     "service.xishan.p2": "I taught English through alphabet-guessing games, taught basic soccer skills, and directed the students' first-ever play, The Little Girl Who Sold Charcoal. Watching shy observers become confident performers taught me more than any lesson I had planned. In the forests, the students became teachers, showing me how to identify the wild mushrooms that grew there.",
     "service.xishan.quote": "\"There's a bigger world out there, and I want to see it for myself.\" - Luo",
     "service.xishan.p1": "In the summer of 2024, I arrived in Xishan Township, Eryuan, in the mountains of Yunnan — and the reality of rural education hit me hard. Thirty-two students shared a dormitory smaller than 40 square meters; the entire school owned three aging projectors; 80% of the students had never once left their county.",
     "service.xishan.p3": "One eight-day trip has grown into a multi-school alliance spanning Shanghai and Nanjing, bringing together volunteers from international and local schools. The curriculum now runs from English, history, and sports to math, chess, and paper quilling, and our fundraising campaigns have delivered over $10,000 in funds and supplies.",
     "service.xishan.title": "Beyond Mountains: A Three-Year Journey with Xi Shan Students",
-    "service.lede": "Every summer since 2024, I have gone back to the same mountain classroom. Service, for me, has never been a line on a list — it is the place my passion and my teaching actually meet."
+    "service.lede": "Every summer since 2024, I have gone back to the same mountain classroom. Service, for me, has never been a line on a list — it is the place my passion and my teaching actually meet.",
+    "service.other1.text": "Since fall 2024, I have led the UAA Online education program for students in rural Yunnan. I coordinated bi-weekly sessions and maintained the digital infrastructure for our online classroom, ensuring a stable and accessible learning environment.",
+    "service.other2.title": "Theatre Festival for the Blind",
+    "service.other2.text": "2026 winter, I founded an special interschool performance for 20 visually impaired audience members. We adapted scripts, staging, and choreography for the people.",
+    "service.other1.meta": "Urban Aid Alliance",
+    "service.other2.meta": "EverTale • January 2026",
+    "service.close.title": "The belief underneath all of it"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -113,9 +119,10 @@
     "service.xishan.p4": "assets/img/service-xishan-p4.jpg",
     "service.xishan.p5": "assets/img/service-xishan-p5.jpg",
     "service.hospital": "assets/img/service-hospital.jpg",
-    "service.other1": "assets/img/service-other1.jpg"
+    "service.other1": "assets/img/service-other1.jpg",
+    "service.other2": "assets/img/service-other2.jpg"
   },
-  "updated": "2026-10-29T09:51:00.541Z",
+  "updated": "2026-10-29T10:07:03.254Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -238,6 +245,11 @@
       "z": 1
     },
     "service.other1": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "service.other2": {
       "x": 50,
       "y": 50,
       "z": 1
