@@ -129,7 +129,7 @@
     "home.portrait": "assets/img/home-portrait.jpg",
     "home.card.research": "assets/img/home-card-research.jpg"
   },
-  "updated": "2026-10-30T14:09:11.182Z",
+  "updated": "2026-10-30T14:29:53.290Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -267,9 +267,9 @@
       "z": 1
     },
     "home.card.research": {
-      "x": 49.2,
-      "y": 79.3,
-      "z": 1.16
+      "x": 50.8,
+      "y": 49.2,
+      "z": 1.17
     }
   }
 }
