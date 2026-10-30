@@ -94,7 +94,7 @@
     "research.p1.abstract.label": "Abstract(SUmmarized)",
     "home.card.research.text": "Computer vision, mathematical finance, and education. Three projects, one published.",
     "home.card.service.text": "Mountains may separate us, but our shared passion has no boundaries.",
-    "home.card.athletics.text": "Center back with 13 years of hard work. Defense is mostly geometry and anticipation."
+    "home.card.athletics.text": "Center back with 14 years of hard work. Defense is mostly geometry and anticipation."
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -135,7 +135,7 @@
     "home.card.service": "assets/img/home-card-service.jpg",
     "home.card.athletics": "assets/img/home-card-athletics.jpg"
   },
-  "updated": "2026-10-30T15:10:57.703Z",
+  "updated": "2026-10-30T15:14:21.344Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
