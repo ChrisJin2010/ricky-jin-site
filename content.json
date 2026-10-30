@@ -91,7 +91,10 @@
     "research.p1.status": "Presented on ACM UbiComp/ISWC '26 Companion",
     "research.p1.title": "Hybrid CNN Features and a Zero-Label Composition Score",
     "research.p1.abstract": "Traditional calligraphy learning relies heavily on costly mentor feedback, and existing automated systems typically evaluate only individual characters, ignoring overall page layout (zhangfa). To address this gap, we propose an end-to-end scoring pipeline that runs in real-time on standard laptops. Our approach combines a ResNet-18 model with handcrafted features for character-level assessment (achieving a MAE of 0.35) and a novel zero-label, unsupervised model for composition scoring based on geometric metrics. The final score integrates both dimensions via a weighted formula. Validated through synthetic perturbation tests, this lightweight system provides comprehensive, dual-dimension feedback for self-directed learners without professional instructors. Notably, we also report the failure of test-time augmentation due to direction-sensitive features.",
-    "research.p1.abstract.label": "Abstract(SUmmarized)"
+    "research.p1.abstract.label": "Abstract(SUmmarized)",
+    "home.card.research.text": "Computer vision, mathematical finance, and education. Three projects, one published.",
+    "home.card.service.text": "Mountains may separate us, but our shared passion has no boundaries.",
+    "home.card.athletics.text": "Center back with 13 years of hard work. Defense is mostly geometry and anticipation."
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -132,7 +135,7 @@
     "home.card.service": "assets/img/home-card-service.jpg",
     "home.card.athletics": "assets/img/home-card-athletics.jpg"
   },
-  "updated": "2026-10-30T15:07:23.632Z",
+  "updated": "2026-10-30T15:10:57.703Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
