@@ -8,6 +8,7 @@
   var edits = {};      // text key -> new value
   var baseline = {};   // text key -> activation-time value
   var imgQueue = {};   // img key -> File
+  var pdfQueue = null; // 简历 PDF -> File
   var imgRemoved = {}; // img key -> true
   var posEdits = {};   // img key -> {x,y,z} 取景（焦点% + 缩放）
   var adjSession = null; // 正在调整取景的会话
@@ -248,6 +249,20 @@
       });
     });
 
+    /* 简历：按钮隐藏时注入上传胶囊（已上传则直接点按钮替换） */
+    var rBtn = qs('#rjsResumeBtn');
+    if (rBtn && rBtn.hidden) {
+      var up = document.createElement('button');
+      up.type = 'button';
+      up.id = 'rjsResumeUp';
+      up.textContent = '+ Upload résumé (PDF)';
+      rBtn.parentNode.insertBefore(up, rBtn);
+      up.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        pickResume();
+      });
+    }
+
     /* 拦截点击：图位 → 换图；链接/灯箱 → 禁止跳转 */
     document.addEventListener('click', function (e) {
       if (e.target.closest('#rjsEditBar') || e.target.closest('.rjs-iops') || e.target.closest('.rjs-adjpanel')) return;
@@ -256,6 +271,11 @@
       if (imgBox) {
         e.preventDefault(); e.stopPropagation();
         pickFile(imgBox, imgBox.getAttribute('data-img-key'));
+        return;
+      }
+      if (e.target.closest('#rjsResumeBtn')) {
+        e.preventDefault(); e.stopPropagation();
+        pickResume();
         return;
       }
       if (e.target.closest('a') || e.target.closest('[data-lightbox]')) {
@@ -306,6 +326,31 @@
       box.classList.add('has-img');
       refresh();
       setStat('已选新照片——悬停图位点「调整」可拖动平移、滚轮缩放取景');
+    };
+    inp.click();
+  }
+
+  function pickResume() {
+    var inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = 'application/pdf,.pdf';
+    inp.onchange = function () {
+      if (!inp.files || !inp.files[0]) return;
+      var f = inp.files[0];
+      if ((f.type && f.type !== 'application/pdf') || (!f.type && !/\.pdf$/i.test(f.name))) {
+        setStat('请选择 PDF 文件');
+        return;
+      }
+      pdfQueue = f;
+      var rBtn = qs('#rjsResumeBtn');
+      if (rBtn) {
+        rBtn.hidden = false;
+        var up = qs('#rjsResumeUp');
+        if (up) up.remove();
+      }
+      var rNote = qs('#rjsResumeNote');
+      if (rNote) rNote.hidden = false;
+      refresh();
+      setStat('已选简历「' + f.name + '」——点底部「保存改动」写入网站文件夹');
     };
     inp.click();
   }
@@ -412,7 +457,7 @@
   }
 
   function refresh() {
-    dirty = Object.keys(edits).length + Object.keys(imgQueue).length + Object.keys(imgRemoved).length + Object.keys(posEdits).length > 0;
+    dirty = Object.keys(edits).length + Object.keys(imgQueue).length + Object.keys(imgRemoved).length + Object.keys(posEdits).length + (pdfQueue ? 1 : 0) > 0;
     qs('#rjsSave').disabled = !dirty;
   }
 
@@ -439,6 +484,14 @@
             });
           });
         });
+        if (pdfQueue) {
+          chain = chain.then(function () {
+            setStat('正在写入简历 PDF…');
+            return writeFile('assets/resume.pdf', pdfQueue).then(function () {
+              data.text['home.resume.pdf'] = 'assets/resume.pdf';
+            });
+          });
+        }
         return chain.then(function () {
           setStat('正在写入 content.json…');
           data.updated = new Date().toISOString();
@@ -448,7 +501,7 @@
     }).then(function () {
       Object.keys(edits).forEach(function (k) { baseline[k] = edits[k]; });
       qsa('.rjs-dirty').forEach(function (el) { el.classList.remove('rjs-dirty'); });
-      edits = {}; imgQueue = {}; imgRemoved = {}; posEdits = {};
+      edits = {}; imgQueue = {}; imgRemoved = {}; posEdits = {}; pdfQueue = null;
       dirty = false;
       refresh();
       setStat('✓ 已保存到本地文件夹！打开 GitHub Desktop → Commit to main → Push origin，1–2 分钟后线上生效');

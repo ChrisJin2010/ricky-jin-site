@@ -94,7 +94,22 @@
     "research.p1.abstract.label": "Abstract(SUmmarized)",
     "home.card.research.text": "Computer vision, mathematical finance, and education. Three projects, one published.",
     "home.card.service.text": "Mountains may separate us, but our shared passion has no boundaries.",
-    "home.card.athletics.text": "Center back with 14 years of hard work. Defense is mostly geometry and anticipation."
+    "home.card.athletics.text": "Center back with 14 years of hard work. Defense is mostly geometry and anticipation.",
+    "athletics.j1.year": "[2013 · Age 4]",
+    "athletics.journey.note": "From the first pair of boots at age 4 to the varsity back line — still chasing the same ball.",
+    "athletics.journey.title": "On the Pitch Since 2013",
+    "athletics.soccer.tag2": "4 years",
+    "athletics.soccer.tag3": "Captain & Starter",
+    "athletics.soccer.title": "SHSID Varsity Soccer Team",
+    "athletics.soccer.quote": "\"You should come off the pitch without any regret.\" - Coach O'brien",
+    "athletics.stat1.num": "[4]",
+    "athletics.stat2.num": "[2]",
+    "athletics.stat3.num": "[50+]",
+    "athletics.stat4.num": "[7]",
+    "athletics.j2.year": "[2016 · Age 8]",
+    "athletics.j3.year": "[2018 · Age 10]",
+    "athletics.j4.year": "[2023 · Age 15]",
+    "athletics.j5.year": "[Now · Age 18]"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -133,9 +148,14 @@
     "home.card.research": "assets/img/home-card-research.jpg",
     "home.card.theater": "assets/img/home-card-theater.jpg",
     "home.card.service": "assets/img/home-card-service.jpg",
-    "home.card.athletics": "assets/img/home-card-athletics.jpg"
+    "home.card.athletics": "assets/img/home-card-athletics.jpg",
+    "athletics.j1": "assets/img/athletics-j1.jpg",
+    "athletics.j5": "assets/img/athletics-j5.jpg",
+    "athletics.j4": "assets/img/athletics-j4.jpg",
+    "athletics.j2": "assets/img/athletics-j2.jpg",
+    "athletics.j3": "assets/img/athletics-j3.jpg"
   },
-  "updated": "2026-10-30T15:18:35.326Z",
+  "updated": "2026-10-30T15:42:43.971Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -291,6 +311,31 @@
       "x": 50.4,
       "y": 69.8,
       "z": 1.29
+    },
+    "athletics.j1": {
+      "x": 49.6,
+      "y": 61.3,
+      "z": 1.17
+    },
+    "athletics.j5": {
+      "x": 50,
+      "y": 50,
+      "z": 1.08
+    },
+    "athletics.j4": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.j2": {
+      "x": 67.5,
+      "y": 45.2,
+      "z": 1
+    },
+    "athletics.j3": {
+      "x": 23.5,
+      "y": 31.6,
+      "z": 1.17
     }
   }
 }

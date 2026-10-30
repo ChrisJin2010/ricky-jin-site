@@ -83,6 +83,7 @@
             four things I have stayed with long enough to get good at.
           </p>
         </div>
+        <div class="about__tags" data-key="home.about.tags" data-ph="Three nouns that characterize you">Storyteller × Modeler × Connector</div>
       </div>
 
       <aside class="intro__side reveal">
@@ -206,23 +207,46 @@
         </dl>
 
         <div class="socials">
+          <a href="#" data-key="home.contact.social1" data-ph="LinkedIn">LinkedIn</a>
+          <a href="https://github.com/RJdaBest-yo" target="_blank" rel="noopener" data-key="home.contact.social2" data-ph="GitHub">GitHub</a>
           <a href="https://www.instagram.com/rickyjin2008/" target="_blank" rel="noopener" data-key="home.contact.social3" data-ph="Instagram">Instagram</a>
           <a href="mailto:rickyjin2008@163.com" data-key="home.contact.social4" data-ph="Email">Email</a>
         </div>
       </div>
 
       <div class="reveal">
-        <div class="ph r-3x4" data-img-key="home.contact.photo">
-          <img alt="Ricky Jin in a candid moment">
-          <span class="ph__hint">Click to upload photo</span>
+        <div class="slider" aria-label="Contact photos">
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <div class="ph r-3x4" data-img-key="home.contact.photo">
+                <img alt="Ricky Jin — photo 1">
+                <span class="ph__hint">Click to upload photo 1</span>
+              </div>
+              <div class="ph r-3x4" data-img-key="home.contact.photo2">
+                <img alt="Ricky Jin — photo 2">
+                <span class="ph__hint">Click to upload photo 2</span>
+              </div>
+              <div class="ph r-3x4" data-img-key="home.contact.photo3">
+                <img alt="Ricky Jin — photo 3">
+                <span class="ph__hint">Click to upload photo 3</span>
+              </div>
+            </div>
+          </div>
+          <button class="slider__prev" aria-label="Previous photo">←</button>
+          <button class="slider__next" aria-label="Next photo">→</button>
+          <div class="slider__dots">
+            <button class="slider__dot" aria-label="Go to photo 1"></button>
+            <button class="slider__dot" aria-label="Go to photo 2"></button>
+            <button class="slider__dot" aria-label="Go to photo 3"></button>
+          </div>
         </div>
         <div style="margin-top:26px">
-          <a class="btn btn--paper" href="#" onclick="return false;">
+          <a class="btn btn--paper" id="rjsResumeBtn" href="#" download="Ricky-Jin-Resume.pdf" hidden>
             <span data-key="home.resume.label" data-ph="Résumé button label">Download Résumé (PDF)</span>
             <span class="btn__arrow">↓</span>
           </a>
-          <p class="cap" data-key="home.resume.note" data-ph="Placeholder note">
-            Résumé upload slot — replace this button with your PDF link later.
+          <p class="cap" id="rjsResumeNote" data-key="home.resume.note" data-ph="Résumé caption" hidden>
+            Ricky Jin — one-page résumé
           </p>
         </div>
       </div>
@@ -238,12 +262,6 @@
       <div class="foot__tags" data-key="global.foot.note" data-ph="Three nouns that characterize you">Storyteller × Modeler × Connector</div>
       <div class="foot__small">© <span id="year">2026</span> Ricky Jin</div>
     </div>
-    <nav class="socials foot__social" aria-label="Social links">
-      <a href="#" data-key="global.foot.li" data-ph="LinkedIn">LinkedIn</a>
-      <a href="https://github.com/RJdaBest-yo" target="_blank" rel="noopener" data-key="global.foot.gh" data-ph="GitHub">GitHub</a>
-      <a href="https://www.instagram.com/rickyjin2008/" target="_blank" rel="noopener" data-key="global.foot.ig" data-ph="Instagram">Instagram</a>
-      <a href="mailto:rickyjin2008@163.com" data-key="global.foot.em" data-ph="Email">Email</a>
-    </nav>
   </div>
 </footer>
 
