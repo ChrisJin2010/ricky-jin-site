@@ -127,9 +127,12 @@
     "service.other1": "assets/img/service-other1.jpg",
     "service.other2": "assets/img/service-other2.jpg",
     "home.portrait": "assets/img/home-portrait.jpg",
-    "home.card.research": "assets/img/home-card-research.jpg"
+    "home.card.research": "assets/img/home-card-research.jpg",
+    "home.card.theater": "assets/img/home-card-theater.jpg",
+    "home.card.service": "assets/img/home-card-service.jpg",
+    "home.card.athletics": "assets/img/home-card-athletics.jpg"
   },
-  "updated": "2026-10-30T14:29:53.290Z",
+  "updated": "2026-10-30T15:07:23.632Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -270,6 +273,21 @@
       "x": 50.8,
       "y": 49.2,
       "z": 1.17
+    },
+    "home.card.theater": {
+      "x": 57.8,
+      "y": 28.5,
+      "z": 1.26
+    },
+    "home.card.service": {
+      "x": 56,
+      "y": 49.5,
+      "z": 1.4
+    },
+    "home.card.athletics": {
+      "x": 50.4,
+      "y": 69.8,
+      "z": 1.29
     }
   }
 }
