@@ -125,9 +125,10 @@
     "service.xishan.p5": "assets/img/service-xishan-p5.jpg",
     "service.hospital": "assets/img/service-hospital.jpg",
     "service.other1": "assets/img/service-other1.jpg",
-    "service.other2": "assets/img/service-other2.jpg"
+    "service.other2": "assets/img/service-other2.jpg",
+    "home.portrait": "assets/img/home-portrait.jpg"
   },
-  "updated": "2026-10-29T10:16:09.753Z",
+  "updated": "2026-10-30T13:47:49.245Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -257,6 +258,11 @@
     "service.other2": {
       "x": 50,
       "y": 50,
+      "z": 1
+    },
+    "home.portrait": {
+      "x": 44.5,
+      "y": 49.6,
       "z": 1
     }
   }
