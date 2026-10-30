@@ -126,9 +126,10 @@
     "service.hospital": "assets/img/service-hospital.jpg",
     "service.other1": "assets/img/service-other1.jpg",
     "service.other2": "assets/img/service-other2.jpg",
-    "home.portrait": "assets/img/home-portrait.jpg"
+    "home.portrait": "assets/img/home-portrait.jpg",
+    "home.card.research": "assets/img/home-card-research.jpg"
   },
-  "updated": "2026-10-30T13:47:49.245Z",
+  "updated": "2026-10-30T14:09:11.182Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -264,6 +265,11 @@
       "x": 44.5,
       "y": 49.6,
       "z": 1
+    },
+    "home.card.research": {
+      "x": 49.2,
+      "y": 79.3,
+      "z": 1.16
     }
   }
 }

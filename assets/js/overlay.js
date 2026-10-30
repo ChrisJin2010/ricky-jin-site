@@ -55,7 +55,7 @@
           var p = pos[k];
           image.style.objectPosition = p.x + '% ' + p.y + '%';
           image.style.transformOrigin = p.x + '% ' + p.y + '%';
-          if (p.z && p.z !== 1) image.style.transform = 'scale(' + p.z + ')';
+          if (p.z && p.z !== 1) image.style.setProperty('--pz', p.z);
         }
       });
       rebuildCaps(text);
