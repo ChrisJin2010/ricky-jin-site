@@ -249,20 +249,6 @@
       });
     });
 
-    /* 简历：按钮隐藏时注入上传胶囊（已上传则直接点按钮替换） */
-    var rBtn = qs('#rjsResumeBtn');
-    if (rBtn && rBtn.hidden) {
-      var up = document.createElement('button');
-      up.type = 'button';
-      up.id = 'rjsResumeUp';
-      up.textContent = '+ Upload résumé (PDF)';
-      rBtn.parentNode.insertBefore(up, rBtn);
-      up.addEventListener('click', function (e) {
-        e.preventDefault(); e.stopPropagation();
-        pickResume();
-      });
-    }
-
     /* 拦截点击：图位 → 换图；链接/灯箱 → 禁止跳转 */
     document.addEventListener('click', function (e) {
       if (e.target.closest('#rjsEditBar') || e.target.closest('.rjs-iops') || e.target.closest('.rjs-adjpanel')) return;
@@ -341,14 +327,6 @@
         return;
       }
       pdfQueue = f;
-      var rBtn = qs('#rjsResumeBtn');
-      if (rBtn) {
-        rBtn.hidden = false;
-        var up = qs('#rjsResumeUp');
-        if (up) up.remove();
-      }
-      var rNote = qs('#rjsResumeNote');
-      if (rNote) rNote.hidden = false;
       refresh();
       setStat('已选简历「' + f.name + '」——点底部「保存改动」写入网站文件夹');
     };

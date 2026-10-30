@@ -58,13 +58,6 @@
           if (p.z && p.z !== 1) image.style.setProperty('--pz', p.z);
         }
       });
-      var rBtn = document.getElementById('rjsResumeBtn');
-      if (rBtn && text['home.resume.pdf']) {
-        rBtn.href = text['home.resume.pdf'];
-        rBtn.hidden = false;
-        var rNote = document.getElementById('rjsResumeNote');
-        if (rNote) rNote.hidden = false;
-      }
       rebuildCaps(text);
     })
     .catch(function () { /* offline or missing file: show bundled placeholders */ })
