@@ -43,7 +43,7 @@
     "theater.j2.year": "[January 2019 · Age 11]",
     "home.hero.eyebrow": "Shanghai, China · Class of 2027",
     "home.about.p1": "Hello — I'm Ricky Jin(金睿杰), a senior at Shanghai High School International Division(SHSID). My week usually splits three ways: chasing a research question, rehearsing a scene, and running sprints on a pitch that has seen better weather.",
-    "home.portrait.cap": "Ricky Jin — Shanghai, [Year]",
+    "home.portrait.cap": "Ricky Jin — Shanghai, 2024",
     "home.contact.text": "If you'd like a fuller research portfolio, a full video of performance, or just to have a chill chat with me, my inbox is open.",
     "home.contact.email": "rickyjin2008@163.com",
     "home.contact.phone": "+86 13120956427",
@@ -135,7 +135,7 @@
     "home.card.service": "assets/img/home-card-service.jpg",
     "home.card.athletics": "assets/img/home-card-athletics.jpg"
   },
-  "updated": "2026-10-30T15:14:21.344Z",
+  "updated": "2026-10-30T15:18:35.326Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
