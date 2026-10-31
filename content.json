@@ -147,10 +147,10 @@
     "theater.t9": "assets/img/theater-t9.jpg",
     "theater.t10": "assets/img/theater-t10.jpg",
     "service.xishan.main": "assets/img/service-xishan-main.jpg",
-    "service.xishan.p2": "assets/img/service-xishan-p2.jpg",
+    "service.xishan.p2": "assets/img/service-xishan-p2.jpg?v=1793418584331",
     "service.xishan.p3": "assets/img/service-xishan-p3.jpg",
     "service.xishan.p4": "assets/img/service-xishan-p4.jpg",
-    "service.xishan.p5": "assets/img/service-xishan-p5.jpg",
+    "service.xishan.p5": "assets/img/service-xishan-p5.jpg?v=1793418584331",
     "service.hospital": "assets/img/service-hospital.jpg",
     "service.other1": "assets/img/service-other1.jpg",
     "service.other2": "assets/img/service-other2.jpg",
@@ -176,7 +176,7 @@
     "athletics.lead3": "assets/img/athletics-lead3.jpg",
     "athletics.lead2": "assets/img/athletics-lead2.jpg?v=1793417964666"
   },
-  "updated": "2026-10-31T03:47:43.903Z",
+  "updated": "2026-10-31T03:49:44.838Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
