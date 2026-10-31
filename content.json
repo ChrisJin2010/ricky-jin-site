@@ -117,7 +117,9 @@
     "athletics.lead2.title": "Youth Sports Coach — Xishan",
     "athletics.lead2.text": "In the mountains of Yunnan, I ran sports sessions for the students. Kids played frisbee and dodge ball for the first time, learning to pass, to mark, and to trust a teammate's position.",
     "athletics.lead3.text": "Sports-meet season, my leg freshly broken: as class monitor, I led opening-ceremony performance from a wheelchair, then rallied everyone into event after event. Leadership is not about standing at the front; it is about keeping the class moving.",
-    "athletics.lead1.text": "Starting center back and captain: I organize pre-season training, manage defensive assignments match by match, and act as the bridge between the coach and the players. Being a captain means to be there whenever a teammate needs me."
+    "athletics.lead1.text": "Starting center back and captain: I organize pre-season training, manage defensive assignments match by match, and act as the bridge between the coach and the players. Being a captain means to be there whenever a teammate needs me.",
+    "theater.car.title": "On stage, off script",
+    "theater.g4.title": "Rehearsal"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -174,7 +176,7 @@
     "athletics.lead3": "assets/img/athletics-lead3.jpg",
     "athletics.lead2": "assets/img/athletics-lead2.jpg?v=1793417964666"
   },
-  "updated": "2026-10-31T03:44:15.676Z",
+  "updated": "2026-10-31T03:47:43.903Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
