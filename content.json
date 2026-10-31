@@ -120,7 +120,11 @@
     "athletics.lead1.text": "Starting center back and captain: I organize pre-season training, manage defensive assignments match by match, and act as the bridge between the coach and the players. Being a captain means to be there whenever a teammate needs me.",
     "theater.car.title": "On stage, off script",
     "theater.g4.title": "Rehearsal",
-    "home.resume.note": "Ricky Jin — three-pages résumé"
+    "home.resume.note": "Ricky Jin — three-pages résumé",
+    "research.p1.text": "We built a webcam prototype that scores individual Chinese characters and the composition of the entire page, running in real time on an ordinary laptop. The goal is faster, more explainable feedback for self-directed practice — not a replacement for a calligraphy teacher.",
+    "research.p1.role": "Lead author · Data processing & implementation",
+    "research.p1.mentor": "Ricky Jin ✕ Brian Deng ✕ Tom Ding",
+    "research.p1.when": "July 2025 - Now"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -175,9 +179,12 @@
     "athletics.soccer.p8": "assets/img/athletics-soccer-p8.jpg",
     "athletics.lead1": "assets/img/athletics-lead1.jpg",
     "athletics.lead3": "assets/img/athletics-lead3.jpg",
-    "athletics.lead2": "assets/img/athletics-lead2.jpg?v=1793417964666"
+    "athletics.lead2": "assets/img/athletics-lead2.jpg?v=1793417964666",
+    "research.p1.image": "assets/img/research-p1-image.jpg?v=1793422009212",
+    "research.p1.image2": "assets/img/research-p1-image2.jpg?v=1793422009212",
+    "research.p1.image3": "assets/img/research-p1-image3.jpg?v=1793422009212"
   },
-  "updated": "2026-10-31T03:50:25.414Z",
+  "updated": "2026-10-31T04:46:50.148Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -412,6 +419,21 @@
     "athletics.lead2": {
       "x": 50,
       "y": 50,
+      "z": 1
+    },
+    "research.p1.image": {
+      "x": 44,
+      "y": 17.3,
+      "z": 1
+    },
+    "research.p1.image2": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "research.p1.image3": {
+      "x": 43.9,
+      "y": 5.2,
       "z": 1
     }
   }
