@@ -204,6 +204,18 @@
     render();
   });
 
+  /* ------------------------------------------------ film facade (48hfp) */
+  var filmWrap = document.querySelector('.film__frame');
+  if (filmWrap) {
+    var filmIfr = filmWrap.querySelector('iframe');
+    Array.prototype.forEach.call(filmWrap.querySelectorAll('.film__play, .film__poster'), function (t) {
+      t.addEventListener('click', function () {
+        if (filmIfr && !filmIfr.src) filmIfr.src = filmIfr.getAttribute('data-src');
+        filmWrap.classList.add('is-on');
+      });
+    });
+  }
+
   /* ------------------------------------------------------- footer year */
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();

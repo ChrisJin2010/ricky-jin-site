@@ -355,7 +355,13 @@ details.abstract[open] summary::after{content:"\2013"}
 .tnote{display:flex;align-items:center;min-width:0}
 .tnote__in{width:100%;min-width:0}
 .film__frame{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden;border-radius:2px}
-.film__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.film__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;z-index:2;cursor:pointer}
+.film__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:78px;height:78px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:rgba(18,20,28,.55);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding-left:6px;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.film__play:hover{background:var(--accent);border-color:var(--accent);transform:translate(-50%,-50%) scale(1.07)}
+.film__frame.is-on .film__poster,.film__frame.is-on .film__play{display:none}
+.film__posterbox{margin:34px auto 0;max-width:300px;width:100%}
+.film__posterbox img{display:block;width:100%;height:auto}
 .rstats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
 .rstat b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1;color:var(--accent)}
 .rstat span{display:block;margin-top:8px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
