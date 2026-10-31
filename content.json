@@ -124,7 +124,8 @@
     "research.p1.text": "We built a webcam prototype that scores individual Chinese characters and the composition of the entire page, running in real time on an ordinary laptop. The goal is faster, more explainable feedback for self-directed practice — not a replacement for a calligraphy teacher.",
     "research.p1.role": "Lead author · Data processing & implementation",
     "research.p1.mentor": "Ricky Jin ✕ Brian Deng ✕ Tom Ding",
-    "research.p1.when": "July 2025 - Now"
+    "research.p1.when": "July 2025 - Now",
+    "research.p1.cap": "Testing Samples"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -184,7 +185,7 @@
     "research.p1.image2": "assets/img/research-p1-image2.jpg?v=1793422009212",
     "research.p1.image3": "assets/img/research-p1-image3.jpg?v=1793422009212"
   },
-  "updated": "2026-10-31T04:46:50.148Z",
+  "updated": "2026-10-31T05:47:07.461Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
