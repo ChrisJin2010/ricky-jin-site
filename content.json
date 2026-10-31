@@ -119,7 +119,8 @@
     "athletics.lead3.text": "Sports-meet season, my leg freshly broken: as class monitor, I led opening-ceremony performance from a wheelchair, then rallied everyone into event after event. Leadership is not about standing at the front; it is about keeping the class moving.",
     "athletics.lead1.text": "Starting center back and captain: I organize pre-season training, manage defensive assignments match by match, and act as the bridge between the coach and the players. Being a captain means to be there whenever a teammate needs me.",
     "theater.car.title": "On stage, off script",
-    "theater.g4.title": "Rehearsal"
+    "theater.g4.title": "Rehearsal",
+    "home.resume.note": "Ricky Jin — three-pages résumé"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -176,7 +177,7 @@
     "athletics.lead3": "assets/img/athletics-lead3.jpg",
     "athletics.lead2": "assets/img/athletics-lead2.jpg?v=1793417964666"
   },
-  "updated": "2026-10-31T03:49:44.838Z",
+  "updated": "2026-10-31T03:50:25.414Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
