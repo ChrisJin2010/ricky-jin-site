@@ -110,8 +110,8 @@
     "athletics.j3.year": "[2018 · Age 10]",
     "athletics.j4.year": "[2023 · Age 15]",
     "athletics.j5.year": "[Now · Age 18]",
-    "athletics.soccer.p1": "I joined the Varsity one year a head the normal enrollment time. In Freshman year, the coach came up to me, inviting me to join the Varsity due to the scarce amount of defenders on the team. That's when my Varsity journey started. Throught the 4 years, I have been the starting center back and played every second for the seasons. As the last defender on the line, the team puts all hope on me when strikers approach. We participate in Division 1 of Shanghai High School Soccer Association League game.[How you started, how long you have played, and what your position actually asks of you. Be concrete: the number of sessions a week, the level you compete at.]",
-    "athletics.soccer.p2": "In 3 years, our team won 3 Championships with half of the games giving zero shots to the opponents. As a defender, I not only guarenteed the safety but also contributed 3 goals. However, I broke my leg twice after the seasons, and was unable to attend training. But I was always at the training supporting my teammates. I learned that being a captain is not just controlling the game, but uniting everyone together on and off the pitch. [Your team's results and your own contribution — a season record, a tournament placing, a moment you are proud of. Then one honest line about a setback or an injury and what you learned from it.]",
+    "athletics.soccer.p1": "I joined varsity a year early — a freshman when the coach, short on defenders, walked over and asked me to step up. Four seasons on, I have started every match at center back and played every minute. As the last defender on the line, I am the one the team counts on when a striker comes through. We compete in Division 1 of the Shanghai High School Soccer Association League.",
+    "athletics.soccer.p2": "Three seasons, three championships — and in half of our games the opposition never took a single shot. I kept the back line safe and still added three goals of my own. Twice I broke my leg in the offseason and couldn't train; both times I kept showing up anyway, supporting my teammates from the sideline. That is where I learned what captaincy really is: not controlling a match, but uniting a team, on and off the pitch.",
     "athletics.soccer.cap": "Stallions — 2324 - 2526 Season",
     "athletics.lead1.meta": "SHSID Varsity · Since 2023",
     "athletics.lead2.title": "Youth Sports Coach — Xishan",
@@ -174,7 +174,7 @@
     "athletics.lead3": "assets/img/athletics-lead3.jpg",
     "athletics.lead2": "assets/img/athletics-lead2.jpg?v=1793417964666"
   },
-  "updated": "2026-10-31T03:39:25.006Z",
+  "updated": "2026-10-31T03:44:15.676Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
