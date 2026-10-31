@@ -149,7 +149,8 @@
     "theater.film1.date": "[Shanghai · 2026]",
     "theater.film1.title": "The Penitent",
     "research.p3.cap": "Students filling out the designed surveys.",
-    "research.p2.cap": "Validation, 2020–2026: 20-day return distributions. The GPR-conditioned jump models track the fat left tail that plain GBM misses."
+    "research.p2.cap": "Validation, 2020–2026: 20-day return distributions. The GPR-conditioned jump models track the fat left tail that plain GBM misses.",
+    "home.resume.pdf": "assets/resume.pdf?v=1793437605186"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -215,7 +216,7 @@
     "home.contact.photo2": "assets/img/home-contact-photo2.jpg?v=1793437365279",
     "home.contact.photo3": "assets/img/home-contact-photo3.jpg?v=1793437365279"
   },
-  "updated": "2026-10-31T09:02:46.199Z",
+  "updated": "2026-10-31T09:06:45.478Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
