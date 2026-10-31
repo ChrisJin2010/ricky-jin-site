@@ -125,7 +125,11 @@
     "research.p1.role": "Lead author · Data processing & implementation",
     "research.p1.mentor": "Ricky Jin ✕ Brian Deng ✕ Tom Ding",
     "research.p1.when": "July 2025 - Now",
-    "research.p1.cap": "Testing Samples"
+    "research.p1.cap": "Testing Samples",
+    "research.p2.title": "Geopolitical Risk and Jump Behavior in Semiconductor Stock Returns",
+    "research.p1.team": "Ricky Jin ✕ Brian Deng ✕ Tom Ding",
+    "research.p2.status": "Pioneer Academy",
+    "research.p2.field": "Mathematical Finance"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -183,9 +187,9 @@
     "athletics.lead2": "assets/img/athletics-lead2.jpg?v=1793417964666",
     "research.p1.image": "assets/img/research-p1-image.jpg?v=1793422009212",
     "research.p1.image2": "assets/img/research-p1-image2.jpg?v=1793422009212",
-    "research.p1.image3": "assets/img/research-p1-image3.jpg?v=1793422009212"
+    "research.p1.image3": "assets/img/research-p1-image3.jpg?v=1793426460431"
   },
-  "updated": "2026-10-31T05:47:07.461Z",
+  "updated": "2026-10-31T06:01:00.723Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -433,8 +437,8 @@
       "z": 1
     },
     "research.p1.image3": {
-      "x": 43.9,
-      "y": 5.2,
+      "x": 50.5,
+      "y": 0,
       "z": 1
     }
   }

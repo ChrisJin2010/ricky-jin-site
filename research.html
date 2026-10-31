@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Inter:wght@300..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20261031b">
+<link rel="stylesheet" href="assets/css/main.css?v=20261031c">
 </head>
 <body>
 
@@ -143,9 +143,12 @@
         </div>
         <h2 class="rblock__title" data-key="research.p2.title" data-ph="Project title">[Research Project Two — Topic]</h2>
         <p class="rblock__text" data-key="research.p2.text" data-ph="Two or three sentences">
-          [Two or three sentences: the question you started from, the method you used, and
-          what you personally built or proved. Keep the first sentence about the real-world
-          phenomenon, not about the dataset.]
+          When geopolitics flares, semiconductor stocks do not drift — they jump. I built a
+          Python pipeline that simulates 20-day returns of the PHLX Semiconductor Index under
+          jump-diffusion models whose intensity is conditioned on the Geopolitical Risk (GPR)
+          index, benchmarked against GBM, Heston, and fractional Brownian motion. Trained on
+          1994–2019 and stress-tested on 2020–2026, the models are scored by how well their
+          tail-risk (VaR) forecasts hold up in high- and low-risk regimes.
         </p>
 
         <dl class="rmeta">
@@ -161,7 +164,16 @@
             <dt>Timeline</dt>
             <dd data-key="research.p2.when" data-ph="Dates">[Month Year] – present</dd>
           </div>
+          <div>
+            <dt>Tools</dt>
+            <dd data-key="research.p2.tools" data-ph="Tools used">Python · NumPy · pandas · SciPy</dd>
+          </div>
         </dl>
+
+        <a class="btn btn--line rblock__repo" href="https://github.com/RJdaBest-yo/geopolitical-risk-semiconductor-jumps" target="_blank" rel="noopener">
+          <span data-key="research.p2.repo" data-ph="Repo button label">Code &amp; data on GitHub</span>
+          <span class="btn__arrow">↗</span>
+        </a>
 
         <details class="abstract">
           <summary data-key="research.p2.abstract.label" data-ph="Abstract toggle">Abstract</summary>
@@ -245,8 +257,8 @@
   </div>
 </footer>
 
-<script src="assets/js/overlay.js?v=20261031b"></script>
-<script src="assets/js/app.js?v=20261031b"></script>
-<script src="assets/js/edit.js?v=20261031b"></script>
+<script src="assets/js/overlay.js?v=20261031c"></script>
+<script src="assets/js/app.js?v=20261031c"></script>
+<script src="assets/js/edit.js?v=20261031c"></script>
 </body>
 </html>
