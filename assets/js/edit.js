@@ -453,12 +453,13 @@
         var keys = Object.keys(imgQueue);
         var n = 0;
         var chain = Promise.resolve();
+        var stamp = Date.now(); // 版本号：换图后 URL 变化，强制浏览器拉新图，避免同名缓存
         keys.forEach(function (k) {
           chain = chain.then(function () {
             setStat('正在处理图片（' + (++n) + '/' + keys.length + '）…');
             return compressToBlob(imgQueue[k]).then(function (blob) {
               var p = 'assets/img/' + slug(k) + '.jpg';
-              return writeFile(p, blob).then(function () { data.img[k] = p; });
+              return writeFile(p, blob).then(function () { data.img[k] = p + '?v=' + stamp; });
             });
           });
         });

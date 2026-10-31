@@ -151,11 +151,19 @@
     "home.card.athletics": "assets/img/home-card-athletics.jpg",
     "athletics.j1": "assets/img/athletics-j1.jpg",
     "athletics.j5": "assets/img/athletics-j5.jpg",
-    "athletics.j4": "assets/img/athletics-j4.jpg",
+    "athletics.j4": "assets/img/athletics-j4.jpg?v=20261031a",
     "athletics.j2": "assets/img/athletics-j2.jpg",
-    "athletics.j3": "assets/img/athletics-j3.jpg"
+    "athletics.j3": "assets/img/athletics-j3.jpg",
+    "athletics.soccer.main": "assets/img/athletics-soccer-main.jpg",
+    "athletics.soccer.p2": "assets/img/athletics-soccer-p2.jpg",
+    "athletics.soccer.p3": "assets/img/athletics-soccer-p3.jpg",
+    "athletics.soccer.p4": "assets/img/athletics-soccer-p4.jpg",
+    "athletics.soccer.p5": "assets/img/athletics-soccer-p5.jpg",
+    "athletics.soccer.p6": "assets/img/athletics-soccer-p6.jpg",
+    "athletics.soccer.p7": "assets/img/athletics-soccer-p7.jpg",
+    "athletics.soccer.p8": "assets/img/athletics-soccer-p8.jpg"
   },
-  "updated": "2026-10-31T02:51:37.430Z",
+  "updated": "2026-10-31T03:03:58.231Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -320,7 +328,7 @@
     "athletics.j5": {
       "x": 50,
       "y": 50,
-      "z": 1.08
+      "z": 1
     },
     "athletics.j4": {
       "x": 51,
@@ -336,6 +344,46 @@
       "x": 23.5,
       "y": 31.6,
       "z": 1.17
+    },
+    "athletics.soccer.main": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.soccer.p2": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.soccer.p3": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.soccer.p4": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.soccer.p5": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.soccer.p6": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.soccer.p7": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "athletics.soccer.p8": {
+      "x": 49.6,
+      "y": 46.2,
+      "z": 1.18
     }
   }
 }
