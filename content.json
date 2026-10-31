@@ -100,16 +100,19 @@
     "athletics.journey.title": "On the Pitch Since 2013",
     "athletics.soccer.tag2": "4 years",
     "athletics.soccer.tag3": "Captain & Starter",
-    "athletics.soccer.title": "SHSID Varsity Soccer Team",
+    "athletics.soccer.title": "Stallions Varsity Soccer",
     "athletics.soccer.quote": "\"You should come off the pitch without any regret.\" - Coach O'brien",
     "athletics.stat1.num": "[4]",
     "athletics.stat2.num": "[2]",
     "athletics.stat3.num": "[50+]",
-    "athletics.stat4.num": "[7]",
+    "athletics.stat4.num": "[5]",
     "athletics.j2.year": "[2016 · Age 8]",
     "athletics.j3.year": "[2018 · Age 10]",
     "athletics.j4.year": "[2023 · Age 15]",
-    "athletics.j5.year": "[Now · Age 18]"
+    "athletics.j5.year": "[Now · Age 18]",
+    "athletics.soccer.p1": "I joined the Varsity one year a head the normal enrollment time. In Freshman year, the coach came up to me, inviting me to join the Varsity due to the scarce amount of defenders on the team. That's when my Varsity journey started. Throught the 4 years, I have been the starting center back and played every second for the seasons. As the last defender on the line, the team puts all hope on me when strikers approach. We participate in Division 1 of Shanghai High School Soccer Association League game.[How you started, how long you have played, and what your position actually asks of you. Be concrete: the number of sessions a week, the level you compete at.]",
+    "athletics.soccer.p2": "In 3 years, our team won 3 Championships with half of the games giving zero shots to the opponents. As a defender, I not only guarenteed the safety but also contributed 3 goals. However, I broke my leg twice after the seasons, and was unable to attend training. But I was always at the training supporting my teammates. I learned that being a captain is not just controlling the game, but uniting everyone together on and off the pitch. [Your team's results and your own contribution — a season record, a tournament placing, a moment you are proud of. Then one honest line about a setback or an injury and what you learned from it.]",
+    "athletics.soccer.cap": "Stallions — 2324 - 2526 Season"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -163,7 +166,7 @@
     "athletics.soccer.p7": "assets/img/athletics-soccer-p7.jpg",
     "athletics.soccer.p8": "assets/img/athletics-soccer-p8.jpg"
   },
-  "updated": "2026-10-31T03:03:58.231Z",
+  "updated": "2026-10-31T03:22:47.332Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
