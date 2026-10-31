@@ -474,8 +474,9 @@ body.is-editing .slider__prev,body.is-editing .slider__next,body.is-editing .sli
 .stat__label{margin-top:12px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 
 /* ------------------------------------------------------------- contact */
-.contact{display:grid;grid-template-columns:1fr .8fr;gap:clamp(40px,6vw,80px);align-items:start}
-.contact__foot{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
+.contact{display:grid;grid-template-columns:1fr .5fr;gap:clamp(40px,6vw,80px)}
+.contact__main{display:flex;flex-direction:column}
+.contact__foot{margin-top:auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
 @media (max-width:900px){.contact{grid-template-columns:1fr}}
 .clist{display:grid;gap:2px;margin-top:34px}
 .clist div{

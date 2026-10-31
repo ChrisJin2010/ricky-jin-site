@@ -59,7 +59,7 @@
     "theater.g4.s2n": "[5]",
     "theater.g4.s3n": "[15+]",
     "theater.g4.s4n": "[20+]",
-    "theater.g3.note": "Acted in 2 shows with 600+ audiences. I researched 1920s-30s Shanghai with SJTU historians. The performance was shortlisted for French Embassy's Grand Prix France-Chine 2026",
+    "theater.g3.note": "As the only student lead in Eternal Melody, a public production co-created by the Shanghai Theatre Academy and Shanghai Jiao Tong University’s Department of History, I explored how performance can bring historical research to life.Working with a professional directing team and historians, I trained in stage blocking, gesture, breath control, and precise line delivery. Our script was carefully researched for historical accuracy.The play was shortlisted for the French Embassy's Grand Prix France-Chine 2026 finals, featured by FranceAlumni, and covered by several official media outlets. For me, it was a powerful lesson in how art, history, and cultural memory can intersect on stage.",
     "theater.lede": "Nine productions, on stage and behind it. Theater is where I can truly be myself.",
     "theater.g4.p1": "Working an audience teaches you to read a room — fast.",
     "theater.g4.p2": "Performance is not just about perfectly following the script, but to naturally adapt to circumstances.",
@@ -147,7 +147,9 @@
     "theater.film.title": "48 Hour Film Project",
     "theater.film1.role": "Role — Main Actor / Screenwrite",
     "theater.film1.date": "[Shanghai · 2026]",
-    "theater.film1.title": "The Penitent"
+    "theater.film1.title": "The Penitent",
+    "research.p3.cap": "Students filling out the designed surveys.",
+    "research.p2.cap": "Validation, 2020–2026: 20-day return distributions. The GPR-conditioned jump models track the fat left tail that plain GBM misses."
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -207,9 +209,13 @@
     "research.p1.image2": "assets/img/research-p1-image2.jpg?v=1793422009212",
     "research.p1.image3": "assets/img/research-p1-image3.jpg?v=1793426460431",
     "research.p2.image": "assets/img/research-p2-image.jpg?v=1793431277355",
-    "theater.film1": "assets/img/theater-film1.jpg?v=1793434844055"
+    "theater.film1": "assets/img/theater-film1.jpg?v=1793434844055",
+    "research.p3.image": "assets/img/research-p3-image.jpg?v=1793436695498",
+    "home.contact.photo": "assets/img/home-contact-photo.jpg?v=1793437365279",
+    "home.contact.photo2": "assets/img/home-contact-photo2.jpg?v=1793437365279",
+    "home.contact.photo3": "assets/img/home-contact-photo3.jpg?v=1793437365279"
   },
-  "updated": "2026-10-31T08:20:44.357Z",
+  "updated": "2026-10-31T09:02:46.199Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -467,6 +473,26 @@
       "z": 1
     },
     "theater.film1": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "research.p3.image": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "home.contact.photo": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "home.contact.photo2": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "home.contact.photo3": {
       "x": 50,
       "y": 50,
       "z": 1
