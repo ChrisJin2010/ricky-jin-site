@@ -155,7 +155,7 @@
     "athletics.j2": "assets/img/athletics-j2.jpg",
     "athletics.j3": "assets/img/athletics-j3.jpg"
   },
-  "updated": "2026-10-31T02:49:05.458Z",
+  "updated": "2026-10-31T02:51:37.430Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -323,8 +323,8 @@
       "z": 1.08
     },
     "athletics.j4": {
-      "x": 53,
-      "y": 40.5,
+      "x": 51,
+      "y": 42.1,
       "z": 2.5
     },
     "athletics.j2": {
