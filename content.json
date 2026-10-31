@@ -136,7 +136,13 @@
     "research.p2.when": "Febuary 2026 – July 2026",
     "research.p2.abstract": "Semiconductors power modern technology, yet their stock prices can swing violently when geopolitical tensions flare—tariffs, export controls, supply-chain disruptions, or conflicts can trigger sudden “jumps” that standard models fail to predict. This project asks: Can geopolitical risk help explain—and forecast—these extreme moves in semiconductor stocks?Using daily data from the PHLX Semiconductor Sector Index (SOX) and the Geopolitical Risk (GPR) Index spanning 1994–2026, I compare four modeling approaches: standard Geometric Brownian Motion (GBM), static Jump Diffusion, a novel GPR-conditioned Jump Diffusion model, and an exponential-tail variant. A “jump” is defined as a 20-day SOX log return below −10%, and geopolitical conditions are categorized into four regimes—low-stable, low-rising, high-rising, and high-falling—based on the level and momentum of the GPR Index.",
     "research.p2.abstract.label": "Abstract(Summarized)",
-    "research.p3.title": "Bridging Horizons: Social Media and Career Exploration in Rural Yunnan"
+    "research.p3.title": "Bridging Horizons: Social Media and Career Exploration in Rural Yunnan",
+    "research.p3.when": "June 2025 – present",
+    "research.p3.role": "Author ✕ Researcher",
+    "research.p3.tools": "Surveys · Interviews · Excel · SPSS · AMOS",
+    "research.p3.abstract.label": "Abstract(Summarized)",
+    "research.p3.abstract": "During my teaching fellowship in the mountainous regions of Yunnan, I observed how social media serves as a critical window to the outside world for students with limited local career resources. To understand this dynamic, I investigated how career-related social media exposure influences career exploration among 298 middle school students. Analyzing survey data, I found that while self-efficacy remains the strongest predictor of career exploration (β=0.407, p<0.001), social media exposure also plays a significant, direct role (β=0.177, p<0.001). Interestingly, the mediation path through self-efficacy was not supported, suggesting that online exposure directly broadens students’ horizons rather than solely boosting their confidence.This research highlights that rural students need dual support: access to diverse information and actionable experiences to build genuine self-belief. While limited by its cross-sectional design, this study shifted my perspective from viewing technology merely as a distraction to recognizing it as a vital developmental tool. Moving forward, I aim to explore longitudinal interventions that combine digital literacy with mentorship, ensuring that online inspiration translates into tangible career pathways for underserved youth.",
+    "research.p3.status": "Independent Research"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -197,7 +203,7 @@
     "research.p1.image3": "assets/img/research-p1-image3.jpg?v=1793426460431",
     "research.p2.image": "assets/img/research-p2-image.jpg?v=1793431277355"
   },
-  "updated": "2026-10-31T07:25:09.204Z",
+  "updated": "2026-10-31T07:49:20.387Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
