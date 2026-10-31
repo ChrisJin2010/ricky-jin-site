@@ -50,12 +50,33 @@
     <!-- ---------------------------------------------- project 01 -->
     <article class="rblock reveal">
       <figure class="rblock__media">
-        <div class="ph r-4x3" data-img-key="research.p1.image">
-          <img alt="Multi-camera capture setup for soccer movement analysis">
-          <span class="ph__hint">Click to upload photo</span>
+        <div class="slider" aria-label="Research project photos">
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <div class="ph r-4x3" data-img-key="research.p1.image">
+                <img alt="Calligraphy scoring prototype — photo 1">
+                <span class="ph__hint">Click to upload photo 1</span>
+              </div>
+              <div class="ph r-4x3" data-img-key="research.p1.image2">
+                <img alt="Calligraphy scoring prototype — photo 2">
+                <span class="ph__hint">Click to upload photo 2</span>
+              </div>
+              <div class="ph r-4x3" data-img-key="research.p1.image3">
+                <img alt="Calligraphy scoring prototype — photo 3">
+                <span class="ph__hint">Click to upload photo 3</span>
+              </div>
+            </div>
+          </div>
+          <button class="slider__prev" aria-label="Previous photo">←</button>
+          <button class="slider__next" aria-label="Next photo">→</button>
+          <div class="slider__dots">
+            <button class="slider__dot" aria-label="Go to photo 1"></button>
+            <button class="slider__dot" aria-label="Go to photo 2"></button>
+            <button class="slider__dot" aria-label="Go to photo 3"></button>
+          </div>
         </div>
         <figcaption class="cap" data-key="research.p1.cap" data-ph="Photo caption">
-          Capture setup — four synchronized cameras plus wearable IMU
+          Webcam prototype — real-time scoring of characters and page composition
         </figcaption>
       </figure>
 
@@ -68,9 +89,10 @@
           A Multi-View Vision and IMU System for Soccer Training Feedback
         </h2>
         <p class="rblock__text" data-key="research.p1.text" data-ph="Two or three sentences">
-          I built a low-cost capture setup that fuses multi-camera video with wearable IMU
-          data to reconstruct a player's movement in 3D — and turn it into feedback a coach
-          can act on, without booking a motion-capture lab.
+          We built a webcam prototype that scores individual Chinese characters and the
+          composition of the entire page, running in real time on an ordinary laptop.
+          The goal is faster, more explainable feedback for self-directed practice —
+          not a replacement for a calligraphy teacher.
         </p>
 
         <dl class="rmeta">
@@ -79,8 +101,8 @@
             <dd data-key="research.p1.role" data-ph="Your role">Lead author · System design &amp; implementation</dd>
           </div>
           <div>
-            <dt>Mentor</dt>
-            <dd data-key="research.p1.mentor" data-ph="Mentor / lab">[Mentor name], [Institution]</dd>
+            <dt>Team</dt>
+            <dd data-key="research.p1.team" data-ph="Team members">[Teammates / co-authors]</dd>
           </div>
           <div>
             <dt>Timeline</dt>
