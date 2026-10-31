@@ -38,6 +38,7 @@
       var text = data.text || {};
       var img = data.img || {};
       var pos = data.pos || {};
+      var ver = data.updated ? encodeURIComponent(data.updated) : ''; // 全局版本号：每次保存后所有图片 URL 变化，绕开浏览器缓存
       document.querySelectorAll('[data-key]').forEach(function (el) {
         var k = el.getAttribute('data-key');
         if (Object.prototype.hasOwnProperty.call(text, k)) {
@@ -48,7 +49,7 @@
         var k = el.getAttribute('data-img-key');
         var image = el.querySelector('img');
         if (Object.prototype.hasOwnProperty.call(img, k) && img[k] && image) {
-          image.src = img[k];
+          image.src = img[k] + (ver && img[k].indexOf('?') < 0 ? '?v=' + ver : '');
           el.classList.add('has-img');
         }
         if (image && pos[k]) {
@@ -58,6 +59,8 @@
           if (p.z && p.z !== 1) image.style.setProperty('--pz', p.z);
         }
       });
+      var rb = document.getElementById('rjsResumeBtn');
+      if (rb && text['home.resume.pdf']) rb.href = text['home.resume.pdf']; // 简历按钮：换 PDF 后带版本号，避免下载到旧文件
       rebuildCaps(text);
     })
     .catch(function () { /* offline or missing file: show bundled placeholders */ })

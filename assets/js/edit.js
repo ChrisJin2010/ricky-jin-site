@@ -467,7 +467,7 @@
           chain = chain.then(function () {
             setStat('正在写入简历 PDF…');
             return writeFile('assets/resume.pdf', pdfQueue).then(function () {
-              data.text['home.resume.pdf'] = 'assets/resume.pdf';
+              data.text['home.resume.pdf'] = 'assets/resume.pdf?v=' + stamp;
             });
           });
         }
