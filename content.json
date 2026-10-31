@@ -143,7 +143,11 @@
     "research.p3.abstract.label": "Abstract(Summarized)",
     "research.p3.abstract": "During my teaching fellowship in the mountainous regions of Yunnan, I observed how social media serves as a critical window to the outside world for students with limited local career resources. To understand this dynamic, I investigated how career-related social media exposure influences career exploration among 298 middle school students. Analyzing survey data, I found that while self-efficacy remains the strongest predictor of career exploration (β=0.407, p<0.001), social media exposure also plays a significant, direct role (β=0.177, p<0.001). Interestingly, the mediation path through self-efficacy was not supported, suggesting that online exposure directly broadens students’ horizons rather than solely boosting their confidence.This research highlights that rural students need dual support: access to diverse information and actionable experiences to build genuine self-belief. While limited by its cross-sectional design, this study shifted my perspective from viewing technology merely as a distraction to recognizing it as a vital developmental tool. Moving forward, I aim to explore longitudinal interventions that combine digital literacy with mentorship, ensuring that online inspiration translates into tangible career pathways for underserved youth.",
     "research.p3.status": "Independent Research",
-    "research.next.text": "In college I want to keep chasing the question they all raise: what are beyond the limit of the models? I don't expect to solve it soon because that is why it worth four more years."
+    "research.next.text": "In college I want to keep chasing the question they all raise: what are beyond the limit of the models? I don't expect to solve it soon because that is why it worth four more years.",
+    "theater.film.title": "48 Hour Film Project",
+    "theater.film1.role": "Role — Main Actor / Screenwrite",
+    "theater.film1.date": "[Shanghai · 2026]",
+    "theater.film1.title": "The Penitent"
   },
   "img": {
     "theater.j1": "assets/img/theater-j1.jpg",
@@ -202,9 +206,10 @@
     "research.p1.image": "assets/img/research-p1-image.jpg?v=1793422009212",
     "research.p1.image2": "assets/img/research-p1-image2.jpg?v=1793422009212",
     "research.p1.image3": "assets/img/research-p1-image3.jpg?v=1793426460431",
-    "research.p2.image": "assets/img/research-p2-image.jpg?v=1793431277355"
+    "research.p2.image": "assets/img/research-p2-image.jpg?v=1793431277355",
+    "theater.film1": "assets/img/theater-film1.jpg?v=1793434844055"
   },
-  "updated": "2026-10-31T08:04:33.149Z",
+  "updated": "2026-10-31T08:20:44.357Z",
   "pos": {
     "theater.j1": {
       "x": 66.3,
@@ -457,6 +462,11 @@
       "z": 1
     },
     "research.p2.image": {
+      "x": 50,
+      "y": 50,
+      "z": 1
+    },
+    "theater.film1": {
       "x": 50,
       "y": 50,
       "z": 1
